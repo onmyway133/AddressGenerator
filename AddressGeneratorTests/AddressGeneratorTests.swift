@@ -76,4 +76,47 @@ class AddressGeneratorTests: XCTestCase {
       )
     }
   }
+
+  func testTake() {
+    do {
+      let extendedRmd160 = "00224e60c530f4b6ba1c629858a8d819c86b77d2f9"
+      let data = Data.from(hexString: extendedRmd160)!
+      let hash = try data.sha256().sha256()
+      let take = hash.take(byteCount: 4)
+
+      XCTAssertEqual(take.count, 4)
+      XCTAssertEqual(
+        try take.hexDump().toString(),
+        "579db493"
+      )
+    } catch {
+      XCTFail()
+    }
+  }
+
+  func testAppend() {
+    do {
+      let extendedRmd160 = "00224e60c530f4b6ba1c629858a8d819c86b77d2f9"
+      let data = Data.from(hexString: extendedRmd160)!
+      let address = data.append(data: Data.from(hexString: "579db493")!)
+
+      XCTAssertEqual(address.count, 25)
+      XCTAssertEqual(
+        try address.hexDump().toString(),
+        "00224e60c530f4b6ba1c629858a8d819c86b77d2f9579db493"
+      )
+    }
+  }
+
+  func testAltCoinGenerator() {
+    let generator = AltCoinGenerator()
+    let account = try! generator.generate()
+
+    XCTAssertEqual(account.privateKey.count, 64)
+    XCTAssertEqual(account.address.count, 34)
+
+    // https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash
+    // Common P2PKH which begin with the number 1
+    XCTAssertEqual(account.address.starts(with: "1"), true)
+  }
 }

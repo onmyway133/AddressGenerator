@@ -32,9 +32,9 @@ extension Data {
   }
 
   func append(data: Data) -> Data {
-    var data = self
-    data.append(data)
-    return data
+    var currentData = self
+    currentData.append(data)
+    return currentData
   }
 
   func take(byteCount: UInt) -> Data {
