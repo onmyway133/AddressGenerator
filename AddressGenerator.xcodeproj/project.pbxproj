@@ -12,7 +12,7 @@
 		D218E9171FE2C37800438A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D218E9161FE2C37800438A19 /* Assets.xcassets */; };
 		D218E91A1FE2C37800438A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D218E9181FE2C37800438A19 /* Main.storyboard */; };
 		D218E9261FE2C37800438A19 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9251FE2C37800438A19 /* AddressGeneratorTests.swift */; };
-		D218E9411FE2C40600438A19 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9401FE2C40600438A19 /* Generator.swift */; };
+		D218E9411FE2C40600438A19 /* AddressGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9401FE2C40600438A19 /* AddressGenerator.swift */; };
 		D218E9431FE2C41200438A19 /* Pay2PubKeyHashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9421FE2C41200438A19 /* Pay2PubKeyHashGenerator.swift */; };
 		D218E9451FE2C45500438A19 /* EthereumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9441FE2C45500438A19 /* EthereumGenerator.swift */; };
 		D218E94A1FE2C6DD00438A19 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9491FE2C6DD00438A19 /* Data+Extensions.swift */; };
@@ -44,7 +44,7 @@
 		D218E9211FE2C37800438A19 /* AddressGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D218E9251FE2C37800438A19 /* AddressGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorTests.swift; sourceTree = "<group>"; };
 		D218E9271FE2C37900438A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D218E9401FE2C40600438A19 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
+		D218E9401FE2C40600438A19 /* AddressGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGenerator.swift; sourceTree = "<group>"; };
 		D218E9421FE2C41200438A19 /* Pay2PubKeyHashGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pay2PubKeyHashGenerator.swift; sourceTree = "<group>"; };
 		D218E9441FE2C45500438A19 /* EthereumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumGenerator.swift; sourceTree = "<group>"; };
 		D218E9491FE2C6DD00438A19 /* Data+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		D218E93F1FE2C3F700438A19 /* Generator */ = {
 			isa = PBXGroup;
 			children = (
-				D218E9401FE2C40600438A19 /* Generator.swift */,
+				D218E9401FE2C40600438A19 /* AddressGenerator.swift */,
 				D218E9421FE2C41200438A19 /* Pay2PubKeyHashGenerator.swift */,
 				D218E9441FE2C45500438A19 /* EthereumGenerator.swift */,
 			);
@@ -256,7 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D218E9411FE2C40600438A19 /* Generator.swift in Sources */,
+				D218E9411FE2C40600438A19 /* AddressGenerator.swift in Sources */,
 				D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */,
 				D218E94A1FE2C6DD00438A19 /* Data+Extensions.swift in Sources */,
 				D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */,

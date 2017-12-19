@@ -109,13 +109,14 @@ class AddressGeneratorTests: XCTestCase {
   }
 
   func testAltCoinGenerator() {
-    let generator = Pay2PubKeyHashGenerator()
-    let account = try! generator.generate()
+    let keyPair = try! KeyPairGenerator.generate()
+    let generator = Pay2PubKeyHashGenerator(publicKey: keyPair.publicKey, prefix: 0x00)
+    let address = try! generator.generate()
 
-    XCTAssertEqual(account.address.count, 34)
+    XCTAssertEqual(address.count, 34)
 
     // https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash
     // Common P2PKH which begin with the number 1
-    XCTAssertEqual(account.address.starts(with: "1"), true)
+    XCTAssertEqual(address.starts(with: "1"), true)
   }
 }

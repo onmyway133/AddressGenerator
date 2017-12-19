@@ -5,7 +5,7 @@ struct CryptoCurrencyAccount {
   let address: String
 }
 
-/// Generate cryptocurrency account
-protocol Generator {
-  func generate() throws -> CryptoCurrencyAccount
+/// Generate cryptocurrency address
+protocol AddressGenerator {
+  func generate() throws -> String
 }

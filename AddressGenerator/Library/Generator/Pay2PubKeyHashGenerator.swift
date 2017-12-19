@@ -3,19 +3,24 @@ import AppKit
 // https://en.bitcoin.it/wiki/Address
 // https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash
 // Common P2PKH which begin with the number 1
-struct Pay2PubKeyHashGenerator: Generator {
-  func generate() throws -> CryptoCurrencyAccount {
-    let keyPair = try KeyPairGenerator.generate()
+// // https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
+struct Pay2PubKeyHashGenerator: AddressGenerator {
+  let publicKey: Data
+  let prefix: UInt8
 
-    // https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
+  init(publicKey: Data, prefix: UInt8) {
+    self.publicKey = publicKey
+    self.prefix = prefix
+  }
 
-    let extendedRmd160Hash = try keyPair.publicKey
+  func generate() throws -> String {
+    let extendedRmd160Hash = try publicKey
       // 2 - Perform SHA-256 hashing on the public key
       .sha256()
       // 3 - Perform RIPEMD-160 hashing on the result of SHA-256
       .rmd160()
       // 4 - Add version byte in front of RIPEMD-160 hash (0x00 for Main Network)
-      .prepend(number: 0x00)
+      .prepend(number: prefix)
 
     let checksum = try extendedRmd160Hash
       // 5 - Perform SHA-256 hash on the extended RIPEMD-160 result
@@ -29,9 +34,6 @@ struct Pay2PubKeyHashGenerator: Generator {
     // This is the 25-byte binary Bitcoin Address.
     let address = extendedRmd160Hash.append(data: checksum)
 
-    return CryptoCurrencyAccount(
-      keyPair: keyPair,
-      address: address.base58EncodedString()
-    )
+    return address.base58EncodedString()
   }
 }

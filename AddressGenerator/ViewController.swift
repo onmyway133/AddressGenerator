@@ -12,9 +12,6 @@ class ViewController: NSViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-
-    let account = try? Pay2PubKeyHashGenerator().generate()
-    print(account?.address as Any)
   }
 }
 
