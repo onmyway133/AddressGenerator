@@ -67,7 +67,7 @@ class AddressGeneratorTests: XCTestCase {
   func testPrepend() {
     do {
       let rmd160 = "224e60c530f4b6ba1c629858a8d819c86b77d2f9"
-      let data = rmd160.data(using: .utf8)!
+      let data = Data.from(hexString: rmd160)!
       let prepend = data.prepend(number: 0x00)
       XCTAssertEqual(prepend.count, 21)
       XCTAssertEqual(
