@@ -13,4 +13,17 @@ extension Data {
       return string
     }
   }
+
+
+  func pipe(command: String) throws -> Data {
+    return try Task.run(command: command, input: self)
+  }
+
+  func hexDump(columnCount: Int) throws -> Data {
+    return try Task.run(command: "xxd -p -c \(columnCount)", input: self)
+  }
+
+  func prepend(number: Int) -> Data {
+    return self
+  }
 }
