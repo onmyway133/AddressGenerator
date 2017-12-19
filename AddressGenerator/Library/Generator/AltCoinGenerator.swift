@@ -26,7 +26,8 @@ struct AltCoinGenerator: Generator {
       // 7 - Take the first 4 bytes of the second SHA-256 hash. This is the address checksum
       .take(byteCount: 4)
 
-    // 8 - Add the 4 checksum bytes from stage 7 at the end of extended RIPEMD-160 hash from stage 4. This is the 25-byte binary Bitcoin Address.
+    // 8 - Add the 4 checksum bytes from stage 7 at the end of extended RIPEMD-160 hash from stage 4.
+    // This is the 25-byte binary Bitcoin Address.
     let address = extendedRmd160Hash.append(data: checksum)
 
     return CryptoCurrencyAccount(

@@ -13,7 +13,8 @@ class ViewController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    let pair = try? AltCoinGenerator().generate()
+    let account = try? AltCoinGenerator().generate()
+    print(account?.address as Any)
   }
 }
 
