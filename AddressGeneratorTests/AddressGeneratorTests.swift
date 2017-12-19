@@ -108,15 +108,19 @@ class AddressGeneratorTests: XCTestCase {
     }
   }
 
-  func testAltCoinGenerator() {
+  func testPay2PubKeyHashGenerator() {
     let keyPair = try! KeyPairGenerator.generate()
     let generator = Pay2PubKeyHashGenerator(publicKey: keyPair.publicKey, prefix: 0x00)
     let address = try! generator.generate()
 
     XCTAssertEqual(address.count, 34)
-
-    // https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash
-    // Common P2PKH which begin with the number 1
     XCTAssertEqual(address.starts(with: "1"), true)
+  }
+
+  func testWalletImportFormatGenerator() {
+    let keyPair = try! KeyPairGenerator.generate()
+    let wif = try! WalletImportFormatGenerator.generate(privateKey: keyPair.privateKey, prefix: 0x80)
+
+    XCTAssertEqual(wif.count, 51)
   }
 }
