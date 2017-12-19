@@ -1,36 +1,79 @@
-//
-//  AddressGeneratorTests.swift
-//  AddressGeneratorTests
-//
-//  Created by Khoa Pham on 14.12.2017.
-//  Copyright © 2017 Khoa Pham. All rights reserved.
-//
-
 import XCTest
 @testable import AddressGenerator
 
 class AddressGeneratorTests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+
+  func testKeyPairGenerator() {
+    let pair = try! KeyPairGenerator.generate()
+
+    XCTAssertEqual(pair.privateKey.count, 32)
+    XCTAssertEqual(pair.publicKey.count, 65)
+  }
+
+  func testHexDump() {
+    let pair = try! KeyPairGenerator.generate()
+
+    XCTAssertEqual(try! pair.privateKey.hexDump().count, 65)
+    XCTAssertEqual(try! pair.publicKey.hexDump().count, 131)
+
+    XCTAssertEqual(try! pair.privateKey.hexDump().toString().count, 64)
+    XCTAssertEqual(try! pair.publicKey.hexDump().toString().count, 130)
+  }
+
+  func testSha256() {
+    do {
+      let data = "hello".data(using: .utf8)!
+      let hash = try! data.sha256()
+      XCTAssertEqual(hash.count, 32)
+      XCTAssertEqual(try! hash.hexDump().toString().count, 64)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
+
+    do {
+      let publicKey = "04d0988bfa799f7d7ef9ab3de97ef481cd0f75d2367ad456607647edde665d6f6fbdd594388756a7beaf73b4822bc22d36e9bda7db82df2b8b623673eefc0b7495"
+      let data = publicKey.data(using: .utf8)!
+      let hash = try data.sha256()
+      XCTAssertEqual(hash.count, 32)
+      XCTAssertEqual(
+        try hash.hexDump().toString(),
+        "52263faf869bbf7f0b52cbc54a835d3c8bbd6206ee4eec2e975c033c8016801f"
+      )
+    } catch {
+      XCTFail()
     }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+  }
+
+  func testRmd160() {
+    do {
+      let data = "hello".data(using: .utf8)!
+      let hash = try! data.rmd160()
+      XCTAssertEqual(hash.count, 20)
+      XCTAssertEqual(try! hash.hexDump().toString().count, 40)
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+
+    do {
+      let sha256 = "52263faf869bbf7f0b52cbc54a835d3c8bbd6206ee4eec2e975c033c8016801f"
+      let data = sha256.data(using: .utf8)!
+      let hash = try data.rmd160()
+      XCTAssertEqual(hash.count, 20)
+      XCTAssertEqual(
+        try hash.hexDump().toString(),
+        "224e60c530f4b6ba1c629858a8d819c86b77d2f9"
+      )
+    } catch {
+      XCTFail()
     }
-    
+  }
+
+  func testPrepend() {
+    do {
+      let rmd160 = "224e60c530f4b6ba1c629858a8d819c86b77d2f9"
+      let data = rmd160.data(using: .utf8)!
+      let prepend = data.prepend(number: 0x00)
+      XCTAssertEqual(prepend.count, 21)
+      XCTAssertEqual(
+        try prepend.hexDump().toString(),
+        "00224e60c530f4b6ba1c629858a8d819c86b77d2f9"
+      )
+    }
+  }
 }

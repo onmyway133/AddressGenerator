@@ -12,7 +12,6 @@
 		D218E9171FE2C37800438A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D218E9161FE2C37800438A19 /* Assets.xcassets */; };
 		D218E91A1FE2C37800438A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D218E9181FE2C37800438A19 /* Main.storyboard */; };
 		D218E9261FE2C37800438A19 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9251FE2C37800438A19 /* AddressGeneratorTests.swift */; };
-		D218E9311FE2C37900438A19 /* AddressGeneratorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9301FE2C37900438A19 /* AddressGeneratorUITests.swift */; };
 		D218E9411FE2C40600438A19 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9401FE2C40600438A19 /* Generator.swift */; };
 		D218E9431FE2C41200438A19 /* AltCoinGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9421FE2C41200438A19 /* AltCoinGenerator.swift */; };
 		D218E9451FE2C45500438A19 /* EthereumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9441FE2C45500438A19 /* EthereumGenerator.swift */; };
@@ -24,13 +23,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		D218E9221FE2C37800438A19 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D218E9071FE2C37800438A19 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D218E90E1FE2C37800438A19;
-			remoteInfo = AddressGenerator;
-		};
-		D218E92D1FE2C37900438A19 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D218E9071FE2C37800438A19 /* Project object */;
 			proxyType = 1;
@@ -50,9 +42,6 @@
 		D218E9211FE2C37800438A19 /* AddressGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D218E9251FE2C37800438A19 /* AddressGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorTests.swift; sourceTree = "<group>"; };
 		D218E9271FE2C37900438A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D218E92C1FE2C37900438A19 /* AddressGeneratorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressGeneratorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		D218E9301FE2C37900438A19 /* AddressGeneratorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorUITests.swift; sourceTree = "<group>"; };
-		D218E9321FE2C37900438A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D218E9401FE2C40600438A19 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		D218E9421FE2C41200438A19 /* AltCoinGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AltCoinGenerator.swift; sourceTree = "<group>"; };
 		D218E9441FE2C45500438A19 /* EthereumGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumGenerator.swift; sourceTree = "<group>"; };
@@ -77,13 +66,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D218E9291FE2C37900438A19 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -92,7 +74,6 @@
 			children = (
 				D218E9111FE2C37800438A19 /* AddressGenerator */,
 				D218E9241FE2C37800438A19 /* AddressGeneratorTests */,
-				D218E92F1FE2C37900438A19 /* AddressGeneratorUITests */,
 				D218E9101FE2C37800438A19 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -102,7 +83,6 @@
 			children = (
 				D218E90F1FE2C37800438A19 /* AddressGenerator.app */,
 				D218E9211FE2C37800438A19 /* AddressGeneratorTests.xctest */,
-				D218E92C1FE2C37900438A19 /* AddressGeneratorUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,15 +108,6 @@
 				D218E9271FE2C37900438A19 /* Info.plist */,
 			);
 			path = AddressGeneratorTests;
-			sourceTree = "<group>";
-		};
-		D218E92F1FE2C37900438A19 /* AddressGeneratorUITests */ = {
-			isa = PBXGroup;
-			children = (
-				D218E9301FE2C37900438A19 /* AddressGeneratorUITests.swift */,
-				D218E9321FE2C37900438A19 /* Info.plist */,
-			);
-			path = AddressGeneratorUITests;
 			sourceTree = "<group>";
 		};
 		D218E93E1FE2C3F700438A19 /* Library */ = {
@@ -215,24 +186,6 @@
 			productReference = D218E9211FE2C37800438A19 /* AddressGeneratorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D218E92B1FE2C37900438A19 /* AddressGeneratorUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D218E93B1FE2C37900438A19 /* Build configuration list for PBXNativeTarget "AddressGeneratorUITests" */;
-			buildPhases = (
-				D218E9281FE2C37900438A19 /* Sources */,
-				D218E9291FE2C37900438A19 /* Frameworks */,
-				D218E92A1FE2C37900438A19 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				D218E92E1FE2C37900438A19 /* PBXTargetDependency */,
-			);
-			name = AddressGeneratorUITests;
-			productName = AddressGeneratorUITests;
-			productReference = D218E92C1FE2C37900438A19 /* AddressGeneratorUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -248,11 +201,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					D218E9201FE2C37800438A19 = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = D218E90E1FE2C37800438A19;
-					};
-					D218E92B1FE2C37900438A19 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D218E90E1FE2C37800438A19;
@@ -274,7 +222,6 @@
 			targets = (
 				D218E90E1FE2C37800438A19 /* AddressGenerator */,
 				D218E9201FE2C37800438A19 /* AddressGeneratorTests */,
-				D218E92B1FE2C37900438A19 /* AddressGeneratorUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,13 +237,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		D218E91F1FE2C37800438A19 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D218E92A1FE2C37900438A19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -330,14 +270,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D218E9281FE2C37900438A19 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D218E9311FE2C37900438A19 /* AddressGeneratorUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -345,11 +277,6 @@
 			isa = PBXTargetDependency;
 			target = D218E90E1FE2C37800438A19 /* AddressGenerator */;
 			targetProxy = D218E9221FE2C37800438A19 /* PBXContainerItemProxy */;
-		};
-		D218E92E1FE2C37900438A19 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = D218E90E1FE2C37800438A19 /* AddressGenerator */;
-			targetProxy = D218E92D1FE2C37900438A19 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -533,36 +460,6 @@
 			};
 			name = Release;
 		};
-		D218E93C1FE2C37900438A19 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AddressGeneratorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.AddressGeneratorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = AddressGenerator;
-			};
-			name = Debug;
-		};
-		D218E93D1FE2C37900438A19 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = AddressGeneratorUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.onmyway133.AddressGeneratorUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TEST_TARGET_NAME = AddressGenerator;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -589,15 +486,6 @@
 			buildConfigurations = (
 				D218E9391FE2C37900438A19 /* Debug */,
 				D218E93A1FE2C37900438A19 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D218E93B1FE2C37900438A19 /* Build configuration list for PBXNativeTarget "AddressGeneratorUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D218E93C1FE2C37900438A19 /* Debug */,
-				D218E93D1FE2C37900438A19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

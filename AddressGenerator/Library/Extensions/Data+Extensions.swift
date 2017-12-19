@@ -19,11 +19,25 @@ extension Data {
     return try Task.run(command: command, input: self)
   }
 
-  func hexDump(columnCount: Int) throws -> Data {
-    return try Task.run(command: "xxd -p -c \(columnCount)", input: self)
+  func hexDump() throws -> Data {
+    return try Task.run(command: "xxd -p -c \(count)", input: self)
   }
 
-  func prepend(number: Int) -> Data {
-    return self
+  func prepend(number: UInt8) -> Data {
+    var number = number
+    var data = Data(bytes: &number, count: MemoryLayout.size(ofValue: number))
+    data.append(self)
+
+    return data
+  }
+}
+
+extension Data {
+  func sha256() throws -> Data {
+    return try Task.run(command: "openssl dgst -sha256 -binary", input: self)
+  }
+
+  func rmd160() throws -> Data {
+    return try Task.run(command: "openssl dgst -rmd160 -binary", input: self)
   }
 }

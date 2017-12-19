@@ -9,7 +9,7 @@ final class KeyPairGenerator {
     let privateKey: Data
   }
 
-  func generate() throws -> KeyPair {
+  static func generate() throws -> KeyPair {
     // https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
 
     // 0 - Having a private ECDSA key
