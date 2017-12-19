@@ -3,7 +3,7 @@ import AppKit
 // https://en.bitcoin.it/wiki/Address
 // https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash
 // Common P2PKH which begin with the number 1
-// // https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
+// https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
 struct Pay2PubKeyHashGenerator: AddressGenerator {
   let publicKey: Data
   let prefix: UInt8
