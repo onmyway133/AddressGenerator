@@ -1,10 +1,9 @@
 import AppKit
 
-/// Used for Bitcoin and similar coins
 // https://en.bitcoin.it/wiki/Address
-// A Bitcoin address, or simply address,
-// is an identifier of 26-35 alphanumeric characters, beginning with the number 1 or 3
-struct AltCoinGenerator: Generator {
+// https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash
+// Common P2PKH which begin with the number 1
+struct Pay2PubKeyHashGenerator: Generator {
   func generate() throws -> CryptoCurrencyAccount {
     let keyPair = try KeyPairGenerator.generate()
 

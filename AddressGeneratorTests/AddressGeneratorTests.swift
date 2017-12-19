@@ -109,7 +109,7 @@ class AddressGeneratorTests: XCTestCase {
   }
 
   func testAltCoinGenerator() {
-    let generator = AltCoinGenerator()
+    let generator = Pay2PubKeyHashGenerator()
     let account = try! generator.generate()
 
     XCTAssertEqual(account.address.count, 34)
