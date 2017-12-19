@@ -112,7 +112,6 @@ class AddressGeneratorTests: XCTestCase {
     let generator = AltCoinGenerator()
     let account = try! generator.generate()
 
-    XCTAssertEqual(account.privateKey.count, 64)
     XCTAssertEqual(account.address.count, 34)
 
     // https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash

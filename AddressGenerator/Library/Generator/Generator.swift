@@ -1,7 +1,7 @@
 import Foundation
 
 struct CryptoCurrencyAccount {
-  let privateKey: String
+  let keyPair: KeyPairGenerator.KeyPair
   let address: String
 }
 

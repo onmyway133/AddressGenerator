@@ -31,7 +31,7 @@ struct AltCoinGenerator: Generator {
     let address = extendedRmd160Hash.append(data: checksum)
 
     return CryptoCurrencyAccount(
-      privateKey: try keyPair.privateKey.hexDump().toString(),
+      keyPair: keyPair,
       address: address.base58EncodedString()
     )
   }
