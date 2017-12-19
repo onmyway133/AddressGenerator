@@ -31,6 +31,16 @@ extension Data {
     return data
   }
 
+  func append(data: Data) -> Data {
+    var data = self
+    data.append(data)
+    return data
+  }
+
+  func take(byteCount: UInt) -> Data {
+    return self[0..<byteCount]
+  }
+
   static func from(hexString: String) -> Data? {
     let len = hexString.count / 2
     var data = Data(capacity: len)
