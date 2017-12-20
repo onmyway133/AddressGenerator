@@ -28,6 +28,8 @@
 		D2EDF5301FEACDFA009BF07B /* UnsafePointer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF52F1FEACDFA009BF07B /* UnsafePointer+Extensions.swift */; };
 		D2EDF5321FEACEBD009BF07B /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5311FEACEBD009BF07B /* String+Extensions.swift */; };
 		D2EDF5341FEAD20B009BF07B /* EthereumGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5331FEAD20B009BF07B /* EthereumGeneratorTests.swift */; };
+		D2EDF5371FEAD5BA009BF07B /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */; };
+		D2EDF5391FEAD5C0009BF07B /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */; };
 		D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */; };
 		D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACE1FE8916D0047FCBF /* InternalError.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +73,8 @@
 		D2EDF52F1FEACDFA009BF07B /* UnsafePointer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UnsafePointer+Extensions.swift"; sourceTree = "<group>"; };
 		D2EDF5311FEACEBD009BF07B /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		D2EDF5331FEAD20B009BF07B /* EthereumGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumGeneratorTests.swift; sourceTree = "<group>"; };
+		D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
+		D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
 		D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairGenerator.swift; sourceTree = "<group>"; };
 		D2FEFACE1FE8916D0047FCBF /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -142,6 +146,7 @@
 		D218E93E1FE2C3F700438A19 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				D2EDF5351FEAD5A9009BF07B /* Coin */,
 				D2EDF51F1FEAC7E0009BF07B /* Misc */,
 				D218E94B1FE2C9A600438A19 /* Engine */,
 				D218E9481FE2C6C400438A19 /* Extensions */,
@@ -191,6 +196,15 @@
 				D2EDF5251FEAC894009BF07B /* KeccakHash.swift */,
 			);
 			path = keccak;
+			sourceTree = "<group>";
+		};
+		D2EDF5351FEAD5A9009BF07B /* Coin */ = {
+			isa = PBXGroup;
+			children = (
+				D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */,
+				D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */,
+			);
+			path = Coin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +310,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EDF5371FEAD5BA009BF07B /* Bitcoin.swift in Sources */,
 				D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */,
 				D218E94A1FE2C6DD00438A19 /* Data+Extensions.swift in Sources */,
 				D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */,
@@ -309,6 +324,7 @@
 				D2EDF5321FEACEBD009BF07B /* String+Extensions.swift in Sources */,
 				D218E94D1FE2C9B300438A19 /* Task.swift in Sources */,
 				D2EDF51E1FEAC0C4009BF07B /* Pay2PubKeyHashGenerator.swift in Sources */,
+				D2EDF5391FEAD5C0009BF07B /* Ethereum.swift in Sources */,
 				D2EDF5241FEAC809009BF07B /* sha3.c in Sources */,
 				D2EDF51C1FEAC0C4009BF07B /* EthereumGenerator.swift in Sources */,
 			);
