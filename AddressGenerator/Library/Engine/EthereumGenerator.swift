@@ -1,7 +1,7 @@
 import Foundation
 
 /// Used for Ethereum and similar coins
-struct EthereumGenerator: AddressGenerator {
+struct EthereumGenerator {
   func generate() throws -> String {
     fatalError()
   }

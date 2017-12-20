@@ -3,7 +3,7 @@ import Foundation
 // https://en.bitcoin.it/wiki/Wallet_import_format
 class WalletImportFormatGenerator {
 
-  static func generate(privateKey: Data, prefix: UInt8) throws -> String {
+  func generate(privateKey: Data, prefix: UInt8) throws -> String {
     let extendedKey = privateKey
       .prepend(number: prefix)
 

@@ -4,16 +4,8 @@ import AppKit
 // https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash
 // Common P2PKH which begin with the number 1
 // https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses
-struct Pay2PubKeyHashGenerator: AddressGenerator {
-  let publicKey: Data
-  let prefix: UInt8
-
-  init(publicKey: Data, prefix: UInt8) {
-    self.publicKey = publicKey
-    self.prefix = prefix
-  }
-
-  func generate() throws -> String {
+struct Pay2PubKeyHashGenerator {
+  func generate(publicKey: Data, prefix: UInt8) throws -> String {
     let extendedRmd160Hash = try publicKey
       // 2 - Perform SHA-256 hashing on the public key
       .sha256()

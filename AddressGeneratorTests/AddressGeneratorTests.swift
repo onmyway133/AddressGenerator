@@ -4,14 +4,14 @@ import XCTest
 class AddressGeneratorTests: XCTestCase {
 
   func testKeyPairGenerator() {
-    let pair = try! KeyPairGenerator.generate()
+    let pair = try! KeyPairGenerator().generate()
 
     XCTAssertEqual(pair.privateKey.count, 32)
     XCTAssertEqual(pair.publicKey.count, 65)
   }
 
   func testHexDump() {
-    let pair = try! KeyPairGenerator.generate()
+    let pair = try! KeyPairGenerator().generate()
 
     XCTAssertEqual(try! pair.privateKey.hexDump().count, 65)
     XCTAssertEqual(try! pair.publicKey.hexDump().count, 131)
@@ -109,18 +109,20 @@ class AddressGeneratorTests: XCTestCase {
   }
 
   func testPay2PubKeyHashGenerator() {
-    let keyPair = try! KeyPairGenerator.generate()
-    let generator = Pay2PubKeyHashGenerator(publicKey: keyPair.publicKey, prefix: 0x00)
-    let address = try! generator.generate()
+    let publicKey = "041a12f855d14451b786716164b8325da324aeed3f840fe77257feadfae2f1b0786105ddc906b6bcafb84a9a142bba69e77ad2f21c877c11f0b29676cbdf767af2"
+    let publicKeyData = Data.from(hexString: publicKey)!
+    let address = try! Pay2PubKeyHashGenerator().generate(publicKey: publicKeyData, prefix: 0x00)
 
     XCTAssertEqual(address.count, 34)
-    XCTAssertEqual(address.starts(with: "1"), true)
+    XCTAssertEqual(address, "1KRA1Q6tTxHA3otFGpwnrBVxf5TBe97zWp")
   }
 
   func testWalletImportFormatGenerator() {
-    let keyPair = try! KeyPairGenerator.generate()
-    let wif = try! WalletImportFormatGenerator.generate(privateKey: keyPair.privateKey, prefix: 0x80)
+    let privateKey = "896462332ff505dccfd04a61eea9ece054e0a0873d3bd9d92ddd8a0f27c0c275"
+    let privateKeyData = Data.from(hexString: privateKey)!
+    let wif = try! WalletImportFormatGenerator().generate(privateKey: privateKeyData, prefix: 0x80)
 
     XCTAssertEqual(wif.count, 51)
+    XCTAssertEqual(wif, "5Jro5XgQ7PCSr3rk8FRvYVqmGtRUr4xj2qSexxvNPVwahEe9R5m")
   }
 }
