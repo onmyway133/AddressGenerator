@@ -34,6 +34,7 @@
 		D2EDF53D1FEAD792009BF07B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF53C1FEAD792009BF07B /* Manager.swift */; };
 		D2EDF53F1FEAD909009BF07B /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF53E1FEAD909009BF07B /* Account.swift */; };
 		D2EDF5411FEADA0C009BF07B /* CoinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5401FEADA0C009BF07B /* CoinList.swift */; };
+		D2EDF5431FEAE06C009BF07B /* CoinListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5421FEAE06C009BF07B /* CoinListTests.swift */; };
 		D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */; };
 		D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACE1FE8916D0047FCBF /* InternalError.swift */; };
 /* End PBXBuildFile section */
@@ -83,6 +84,7 @@
 		D2EDF53C1FEAD792009BF07B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		D2EDF53E1FEAD909009BF07B /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		D2EDF5401FEADA0C009BF07B /* CoinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinList.swift; sourceTree = "<group>"; };
+		D2EDF5421FEAE06C009BF07B /* CoinListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinListTests.swift; sourceTree = "<group>"; };
 		D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairGenerator.swift; sourceTree = "<group>"; };
 		D2FEFACE1FE8916D0047FCBF /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +149,7 @@
 				D2EDF52B1FEACC27009BF07B /* DataExtensionsTests.swift */,
 				D2EDF52D1FEACC5A009BF07B /* WalletImportGeneratorTests.swift */,
 				D2EDF5331FEAD20B009BF07B /* EthereumGeneratorTests.swift */,
+				D2EDF5421FEAE06C009BF07B /* CoinListTests.swift */,
 			);
 			path = AddressGeneratorTests;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D218E9261FE2C37800438A19 /* AddressGeneratorTests.swift in Sources */,
+				D2EDF5431FEAE06C009BF07B /* CoinListTests.swift in Sources */,
 				D2EDF52C1FEACC27009BF07B /* DataExtensionsTests.swift in Sources */,
 				D2EDF5341FEAD20B009BF07B /* EthereumGeneratorTests.swift in Sources */,
 				D2EDF52A1FEACC0D009BF07B /* KeyPairGeneratorTests.swift in Sources */,

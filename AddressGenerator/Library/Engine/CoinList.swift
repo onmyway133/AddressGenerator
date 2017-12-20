@@ -3,6 +3,12 @@ import Foundation
 /// Initial data from https://github.com/MichaelMure/WalletGenerator.net/blob/master/src/janin.currency.js
 struct CoinList {
 
+  static let allCoins: [CoinAware] = {
+    return firstCoins + coins.sorted(by: { coin1, coin2 in
+      return coin1.name < coin2.name
+    })
+  }()
+
   static let firstCoins: [CoinAware] = [
     Bitcoin(name: "Bitcoin", publicKeyPrefix: 0x00, privateKeyPrefix: 0x80, "5", "[LK]"),
     Ethereum(name: "Ethereum")
