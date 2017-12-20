@@ -9,7 +9,8 @@ import XCTest
 @testable import AddressGenerator
 
 class CoinListTests: XCTestCase {
-  func testWifStart() {
+  /// Heavy test
+  func _testWifStart() {
     let coins = CoinList.allCoins.flatMap({ $0 as? Bitcoin })
     for coin in coins {
       do {
