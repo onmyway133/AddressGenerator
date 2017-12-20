@@ -59,12 +59,12 @@ class DataExtensionsTests: XCTestCase {
     }
   }
 
-  func testTake() {
+  func testTakeFirst() {
     do {
       let extendedRmd160 = "00224e60c530f4b6ba1c629858a8d819c86b77d2f9"
       let data = try Data.from(hexString: extendedRmd160)
       let hash = try data.sha256().sha256()
-      let take = hash.take(byteCount: 4)
+      let take = hash.takeFirst(byteCount: 4)
 
       XCTAssertEqual(take.count, 4)
       XCTAssertEqual(
@@ -86,6 +86,20 @@ class DataExtensionsTests: XCTestCase {
       XCTAssertEqual(
         try address.hexDump().toString(),
         "00224e60c530f4b6ba1c629858a8d819c86b77d2f9579db493"
+      )
+    }
+  }
+
+  func testTakeLast() {
+    do {
+      let hexString = "88c38cf02f615519608f7eee3f5b765f6a9007a7a08b07c04acd391441045c1d"
+      let data = try! Data.from(hexString: hexString)
+      let take = data.takeLast(byteCount: 20)
+
+      XCTAssertEqual(take.count, 20)
+      XCTAssertEqual(
+        try take.hexDump().toString(),
+        "3f5b765f6a9007a7a08b07c04acd391441045c1d"
       )
     }
   }

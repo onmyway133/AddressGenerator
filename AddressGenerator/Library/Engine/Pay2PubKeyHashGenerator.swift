@@ -20,7 +20,7 @@ struct Pay2PubKeyHashGenerator {
       // 6 - Perform SHA-256 hash on the result of the previous SHA-256 hash
       .sha256()
       // 7 - Take the first 4 bytes of the second SHA-256 hash. This is the address checksum
-      .take(byteCount: 4)
+      .takeFirst(byteCount: 4)
 
     // 8 - Add the 4 checksum bytes from stage 7 at the end of extended RIPEMD-160 hash from stage 4.
     // This is the 25-byte binary Bitcoin Address.

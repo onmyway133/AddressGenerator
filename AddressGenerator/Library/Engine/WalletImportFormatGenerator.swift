@@ -10,7 +10,7 @@ class WalletImportFormatGenerator {
     let checksum = try extendedKey
       .sha256()
       .sha256()
-      .take(byteCount: 4)
+      .takeFirst(byteCount: 4)
 
     return extendedKey
       .append(data: checksum)

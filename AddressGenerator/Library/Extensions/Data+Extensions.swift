@@ -14,7 +14,6 @@ extension Data {
     }
   }
 
-
   func pipe(command: String) throws -> Data {
     return try Task.run(command: command, input: self)
   }
@@ -37,8 +36,16 @@ extension Data {
     return currentData
   }
 
-  func take(byteCount: UInt) -> Data {
+  func takeFirst(byteCount: UInt) -> Data {
     return self[0..<byteCount]
+  }
+
+  func dropFirstByte() -> Data {
+    return Data(dropFirst())
+  }
+
+  func takeLast(byteCount: Int) -> Data {
+    return subdata(in: count-byteCount..<count)
   }
 
   static func from(hexString: String) throws -> Data {
@@ -66,6 +73,10 @@ extension Data {
 
   func rmd160() throws -> Data {
     return try Task.run(command: "openssl dgst -rmd160 -binary", input: self)
+  }
+
+  func keccak256() throws -> Data {
+    return try KeccakHash().hash(data: self)
   }
 }
 
