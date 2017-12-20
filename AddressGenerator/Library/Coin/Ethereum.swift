@@ -15,3 +15,17 @@ class Ethereum {
     self.name = name
   }
 }
+
+extension Ethereum: CoinAware {
+  func generate() throws -> Account {
+    let pair = try KeyPairGenerator().generate()
+    let address = try EthereumGenerator().generate(publicKey: pair.publicKey)
+
+    return try Account(
+      rawPrivateKey: pair.privateKey.hexDump().toString(),
+      rawPublicKey: pair.publicKey.hexDump().toString(),
+      address: address,
+      walletImportFormat: ""
+    )
+  }
+}

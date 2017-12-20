@@ -19,3 +19,18 @@ class Bitcoin {
     self.privateKeyPrefix = privateKeyPrefix
   }
 }
+
+extension Bitcoin: CoinAware {
+  func generate() throws -> Account {
+    let pair = try KeyPairGenerator().generate()
+    let address = try Pay2PubKeyHashGenerator().generate(publicKey: pair.publicKey, prefix: publicKeyPrefix)
+    let wif = try WalletImportFormatGenerator().generate(privateKey: pair.privateKey, prefix: privateKeyPrefix)
+
+    return try Account(
+      rawPrivateKey: pair.privateKey.hexDump().toString(),
+      rawPublicKey: pair.publicKey.hexDump().toString(),
+      address: address,
+      walletImportFormat: wif
+    )
+  }
+}

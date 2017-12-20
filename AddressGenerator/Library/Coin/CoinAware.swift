@@ -9,5 +9,5 @@ struct Account {
 
 protocol CoinAware {
   var name: String { get }
-  func generate() -> Account
+  func generate() throws -> Account
 }

@@ -31,6 +31,7 @@
 		D2EDF5371FEAD5BA009BF07B /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */; };
 		D2EDF5391FEAD5C0009BF07B /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */; };
 		D2EDF53B1FEAD72B009BF07B /* CoinAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF53A1FEAD72B009BF07B /* CoinAware.swift */; };
+		D2EDF53D1FEAD792009BF07B /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF53C1FEAD792009BF07B /* Manager.swift */; };
 		D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */; };
 		D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACE1FE8916D0047FCBF /* InternalError.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
 		D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
 		D2EDF53A1FEAD72B009BF07B /* CoinAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAware.swift; sourceTree = "<group>"; };
+		D2EDF53C1FEAD792009BF07B /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairGenerator.swift; sourceTree = "<group>"; };
 		D2FEFACE1FE8916D0047FCBF /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -177,6 +179,7 @@
 				D2FEFACE1FE8916D0047FCBF /* InternalError.swift */,
 				D25DDE531FE9634000E68662 /* SwiftBaseX.swift */,
 				D25DDE551FE9697D00E68662 /* WalletImportFormatGenerator.swift */,
+				D2EDF53C1FEAD792009BF07B /* Manager.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */,
 				D218E94A1FE2C6DD00438A19 /* Data+Extensions.swift in Sources */,
 				D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */,
+				D2EDF53D1FEAD792009BF07B /* Manager.swift in Sources */,
 				D218E9151FE2C37800438A19 /* ViewController.swift in Sources */,
 				D2EDF51D1FEAC0C4009BF07B /* Pay2ScriptHashGenerator.swift in Sources */,
 				D2EDF5301FEACDFA009BF07B /* UnsafePointer+Extensions.swift in Sources */,
