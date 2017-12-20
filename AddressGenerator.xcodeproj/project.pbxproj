@@ -30,6 +30,7 @@
 		D2EDF5341FEAD20B009BF07B /* EthereumGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5331FEAD20B009BF07B /* EthereumGeneratorTests.swift */; };
 		D2EDF5371FEAD5BA009BF07B /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */; };
 		D2EDF5391FEAD5C0009BF07B /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */; };
+		D2EDF53B1FEAD72B009BF07B /* CoinAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF53A1FEAD72B009BF07B /* CoinAware.swift */; };
 		D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */; };
 		D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FEFACE1FE8916D0047FCBF /* InternalError.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		D2EDF5331FEAD20B009BF07B /* EthereumGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EthereumGeneratorTests.swift; sourceTree = "<group>"; };
 		D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
 		D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
+		D2EDF53A1FEAD72B009BF07B /* CoinAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinAware.swift; sourceTree = "<group>"; };
 		D2FEFACC1FE890E20047FCBF /* KeyPairGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPairGenerator.swift; sourceTree = "<group>"; };
 		D2FEFACE1FE8916D0047FCBF /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,6 +205,7 @@
 			children = (
 				D2EDF5361FEAD5BA009BF07B /* Bitcoin.swift */,
 				D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */,
+				D2EDF53A1FEAD72B009BF07B /* CoinAware.swift */,
 			);
 			path = Coin;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2EDF5371FEAD5BA009BF07B /* Bitcoin.swift in Sources */,
+				D2EDF53B1FEAD72B009BF07B /* CoinAware.swift in Sources */,
 				D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */,
 				D218E94A1FE2C6DD00438A19 /* Data+Extensions.swift in Sources */,
 				D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */,
