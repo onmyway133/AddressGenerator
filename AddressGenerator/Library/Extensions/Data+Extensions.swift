@@ -41,7 +41,7 @@ extension Data {
     return self[0..<byteCount]
   }
 
-  static func from(hexString: String) -> Data? {
+  static func from(hexString: String) throws -> Data {
     let len = hexString.count / 2
     var data = Data(capacity: len)
     for i in 0..<len {
@@ -51,7 +51,7 @@ extension Data {
       if var num = UInt8(bytes, radix: 16) {
         data.append(&num, count: 1)
       } else {
-        return nil
+        throw InteralError.invalid
       }
     }
 
@@ -66,5 +66,21 @@ extension Data {
 
   func rmd160() throws -> Data {
     return try Task.run(command: "openssl dgst -rmd160 -binary", input: self)
+  }
+}
+
+extension Data {
+  func toPointer() -> UnsafePointer<UInt8>? {
+    let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: count)
+    let stream = OutputStream(toBuffer: buffer, capacity: count)
+
+    stream.open()
+    withUnsafeBytes({ (p: UnsafePointer<UInt8>) -> Void in
+      stream.write(p, maxLength: count)
+    })
+
+    stream.close()
+
+    return UnsafePointer<UInt8>(buffer)
   }
 }
