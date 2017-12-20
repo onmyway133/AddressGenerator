@@ -15,7 +15,7 @@ class Bitcoin {
   let wifStart: String
   let cwifStart: String
 
-  init(name: String, publicKeyPrefix: UInt8, privateKeyPrefix: UInt8, wifStart: String, cwifStart: String) {
+  init(name: String, publicKeyPrefix: UInt8, privateKeyPrefix: UInt8, _ wifStart: String, _ cwifStart: String) {
     self.name = name
     self.publicKeyPrefix = publicKeyPrefix
     self.privateKeyPrefix = privateKeyPrefix
