@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		61689E2C7EEC96F5AAB50DB2 /* Pods_AddressGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7753C92C713B97532BDE1954 /* Pods_AddressGenerator.framework */; };
 		D218E9131FE2C37800438A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9121FE2C37800438A19 /* AppDelegate.swift */; };
-		D218E9151FE2C37800438A19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9141FE2C37800438A19 /* ViewController.swift */; };
 		D218E9171FE2C37800438A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D218E9161FE2C37800438A19 /* Assets.xcassets */; };
 		D218E91A1FE2C37800438A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D218E9181FE2C37800438A19 /* Main.storyboard */; };
 		D218E9261FE2C37800438A19 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9251FE2C37800438A19 /* AddressGeneratorTests.swift */; };
@@ -18,6 +17,7 @@
 		D25570971FEBCDBD00AA443F /* CoinsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25570961FEBCDBD00AA443F /* CoinsController.swift */; };
 		D255709A1FEBCDE600AA443F /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25570991FEBCDE600AA443F /* AccountController.swift */; };
 		D255709C1FEBD07400AA443F /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255709B1FEBD07400AA443F /* Label.swift */; };
+		D255709E1FEBD2B200AA443F /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255709D1FEBD2B100AA443F /* MainController.swift */; };
 		D25DDE541FE9634000E68662 /* SwiftBaseX.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25DDE531FE9634000E68662 /* SwiftBaseX.swift */; };
 		D25DDE561FE9697D00E68662 /* WalletImportFormatGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25DDE551FE9697D00E68662 /* WalletImportFormatGenerator.swift */; };
 		D2EDF51C1FEAC0C4009BF07B /* EthereumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5191FEAC0C4009BF07B /* EthereumGenerator.swift */; };
@@ -59,7 +59,6 @@
 		9872C9EAB1987817A1ADC5ED /* Pods-AddressGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressGenerator/Pods-AddressGenerator.release.xcconfig"; sourceTree = "<group>"; };
 		D218E90F1FE2C37800438A19 /* AddressGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D218E9121FE2C37800438A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D218E9141FE2C37800438A19 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D218E9161FE2C37800438A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D218E9191FE2C37800438A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D218E91B1FE2C37800438A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -72,6 +71,7 @@
 		D25570961FEBCDBD00AA443F /* CoinsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsController.swift; sourceTree = "<group>"; };
 		D25570991FEBCDE600AA443F /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		D255709B1FEBD07400AA443F /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		D255709D1FEBD2B100AA443F /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		D25DDE531FE9634000E68662 /* SwiftBaseX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBaseX.swift; sourceTree = "<group>"; };
 		D25DDE551FE9697D00E68662 /* WalletImportFormatGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletImportFormatGenerator.swift; sourceTree = "<group>"; };
 		D2EDF5191FEAC0C4009BF07B /* EthereumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumGenerator.swift; sourceTree = "<group>"; };
@@ -162,7 +162,6 @@
 				D25570951FEBCDAC00AA443F /* Controllers */,
 				D218E93E1FE2C3F700438A19 /* Library */,
 				D218E9121FE2C37800438A19 /* AppDelegate.swift */,
-				D218E9141FE2C37800438A19 /* ViewController.swift */,
 				D218E9161FE2C37800438A19 /* Assets.xcassets */,
 				D218E9181FE2C37800438A19 /* Main.storyboard */,
 				D218E91B1FE2C37800438A19 /* Info.plist */,
@@ -227,6 +226,7 @@
 		D25570951FEBCDAC00AA443F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				D255709D1FEBD2B100AA443F /* MainController.swift */,
 				D25570961FEBCDBD00AA443F /* CoinsController.swift */,
 				D25570991FEBCDE600AA443F /* AccountController.swift */,
 			);
@@ -438,7 +438,6 @@
 				D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */,
 				D2EDF53F1FEAD909009BF07B /* Account.swift in Sources */,
 				D2EDF53D1FEAD792009BF07B /* Manager.swift in Sources */,
-				D218E9151FE2C37800438A19 /* ViewController.swift in Sources */,
 				D2EDF51D1FEAC0C4009BF07B /* Pay2ScriptHashGenerator.swift in Sources */,
 				D2EDF5301FEACDFA009BF07B /* UnsafePointer+Extensions.swift in Sources */,
 				D25DDE561FE9697D00E68662 /* WalletImportFormatGenerator.swift in Sources */,
@@ -448,6 +447,7 @@
 				D255709C1FEBD07400AA443F /* Label.swift in Sources */,
 				D2EDF5261FEAC894009BF07B /* KeccakHash.swift in Sources */,
 				D2EDF5321FEACEBD009BF07B /* String+Extensions.swift in Sources */,
+				D255709E1FEBD2B200AA443F /* MainController.swift in Sources */,
 				D2EDF5411FEADA0C009BF07B /* CoinList.swift in Sources */,
 				D218E94D1FE2C9B300438A19 /* Task.swift in Sources */,
 				D2EDF51E1FEAC0C4009BF07B /* Pay2PubKeyHashGenerator.swift in Sources */,

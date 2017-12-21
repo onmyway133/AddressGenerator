@@ -9,23 +9,35 @@
 import Cocoa
 import Anchors
 
-class ViewController: NSViewController {
+final class MainController: NSViewController {
 
-  let coinsController = CoinsController()
-  let accountController = AccountController()
+  private let containerView = NSBox()
+  private let coinsController = CoinsController()
+  private let accountController = AccountController()
 
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    print("abc")
     setup()
+    print("abc")
+    print(containerView)
   }
 
   func setup() {
+    containerView.fillColor = .brown
+    view.addSubview(containerView)
+    activate(
+      containerView.anchor.edges
+    )
+
+    return
+
     addChildViewController(coinsController)
-    view.addSubview(coinsController.view)
+    containerView.addSubview(coinsController.view)
 
     addChildViewController(accountController)
-    view.addSubview(accountController.view)
+    containerView.addSubview(accountController.view)
 
     activate(
       coinsController.view.anchor.left.top.constant(10),
