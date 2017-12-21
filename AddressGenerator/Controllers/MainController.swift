@@ -33,7 +33,7 @@ final class MainController: BaseController {
     activate(
       coinsController.view.anchor.left.constant(10),
       coinsController.view.anchor.top.constant(30),
-      coinsController.view.anchor.bottom.constant(-10),
+      coinsController.view.anchor.bottom.constant(-20),
 
       coinsController.view.anchor.right.equal
         .to(accountController.view.anchor.left).constant(-20),
@@ -41,7 +41,7 @@ final class MainController: BaseController {
         .to(accountController.view.anchor.width).multiplier(0.4),
 
       accountController.view.anchor.top.constant(10),
-      accountController.view.anchor.right.bottom.constant(-10)
+      accountController.view.anchor.right.bottom.constant(-20)
     )
   }
 

@@ -43,6 +43,7 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
       collectionView.collectionViewLayout = layout
       collectionView.allowsMultipleSelection = false
       collectionView.backgroundColors = [.clear]
+      collectionView.isSelectable = true
       collectionView.register(
         Cell.self,
         forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell")
@@ -86,13 +87,23 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
   // MARK: - NSCollectionViewDelegateFlowLayout
 
   func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-    guard let indexPath = indexPaths.first else {
-      assertionFailure()
-      return
+    guard let indexPath = indexPaths.first,
+      let cell = collectionView.item(at: indexPath) as? Cell else {
+        return
     }
 
     let coin = coins[indexPath.item]
+    cell.update(selected: true)
     select?(coin)
+  }
+
+  func collectionView(_ collectionView: NSCollectionView, didDeselectItemsAt indexPaths: Set<IndexPath>) {
+    guard let indexPath = indexPaths.first,
+      let cell = collectionView.item(at: indexPath) as? Cell else {
+        return
+    }
+
+    cell.update(selected: false)
   }
 
   func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {

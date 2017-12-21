@@ -41,4 +41,13 @@ final class Cell: NSCollectionViewItem {
       label.anchor.left.equal.to(coinImageView.anchor.right).constant(10)
     )
   }
+
+  func update(selected: Bool) {
+    if selected {
+      view.layer?.borderWidth = 1
+      view.layer?.borderColor = NSColor(e_hex: "FD4514").cgColor
+    } else {
+      view.layer?.borderWidth = 0
+    }
+  }
 }
