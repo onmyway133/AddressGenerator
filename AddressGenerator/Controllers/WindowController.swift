@@ -11,5 +11,7 @@ import AppKit
 final class WindowController: NSWindowController {
   override func windowDidLoad() {
     super.windowDidLoad()
+
+    window?.setContentSize(NSSize(width: 800, height: 600))
   }
 }

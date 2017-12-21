@@ -1,5 +1,5 @@
 //
-//  AccountController.swift
+//  BaseController.swift
 //  AddressGenerator
 //
 //  Created by Khoa Pham on 21.12.2017.
@@ -8,7 +8,13 @@
 
 import AppKit
 
-final class AccountController: BaseController {
+class BaseController: NSViewController {
+  let containerView = NSBox()
+
+  override func loadView() {
+    self.view = containerView
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
   }

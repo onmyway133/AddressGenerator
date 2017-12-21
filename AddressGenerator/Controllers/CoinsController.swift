@@ -9,7 +9,7 @@
 import AppKit
 import Anchors
 
-final class CoinsController: NSViewController {
+final class CoinsController: BaseController {
   var titleLabel: Label!
   var collectionView: NSCollectionView!
 

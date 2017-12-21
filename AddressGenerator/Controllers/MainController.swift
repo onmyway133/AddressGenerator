@@ -9,9 +9,7 @@
 import Cocoa
 import Anchors
 
-final class MainController: NSViewController {
-
-  private let containerView = NSBox()
+final class MainController: BaseController {
   private let coinsController = CoinsController()
   private let accountController = AccountController()
 
@@ -22,12 +20,6 @@ final class MainController: NSViewController {
   }
 
   func setup() {
-    containerView.fillColor = .brown
-    view.addSubview(containerView)
-    activate(
-      containerView.anchor.edges
-    )
-
     addChildViewController(coinsController)
     containerView.addSubview(coinsController.view)
 
