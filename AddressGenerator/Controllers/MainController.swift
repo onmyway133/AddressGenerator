@@ -25,19 +25,20 @@ final class MainController: BaseController {
 
   func setup() {
     addChildViewController(coinsController)
-    containerView.addSubview(coinsController.view)
+    view.addSubview(coinsController.view)
 
     addChildViewController(accountController)
-    containerView.addSubview(accountController.view)
+    view.addSubview(accountController.view)
 
     activate(
-      coinsController.view.anchor.left.top.constant(10),
+      coinsController.view.anchor.left.constant(10),
+      coinsController.view.anchor.top.constant(30),
       coinsController.view.anchor.bottom.constant(-10),
 
       coinsController.view.anchor.right.equal
         .to(accountController.view.anchor.left).constant(-20),
       coinsController.view.anchor.width.equal
-        .to(accountController.view.anchor.width),
+        .to(accountController.view.anchor.width).multiplier(0.5),
 
       accountController.view.anchor.top.constant(10),
       accountController.view.anchor.right.bottom.constant(-10)

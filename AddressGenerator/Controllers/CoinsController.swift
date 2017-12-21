@@ -9,7 +9,7 @@
 import AppKit
 import Anchors
 
-final class CoinsController: BaseController, NSCollectionViewDataSource, NSCollectionViewDelegate {
+final class CoinsController: BaseController, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
   var titleLabel: Label!
   var collectionView: NSCollectionView!
   let coins = CoinList.allCoins
@@ -48,10 +48,16 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
   }
 
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-    return Cell()
+    let cell = Cell()
+    let coin = coins[indexPath.item]
+
+    cell.label.stringValue = coin.name
+    cell.imageView?.image = NSImage(named: NSImage.Name(rawValue: coin.name))
+
+    return cell
   }
 
-  // MARK: - NSCollectionViewDelegate
+  // MARK: - NSCollectionViewDelegateFlowLayout
 
   func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
     guard let indexPath = indexPaths.first else {
@@ -61,5 +67,13 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
 
     let coin = coins[indexPath.item]
     select?(coin)
+  }
+
+  func collectionView(_ collectionView: NSCollectionView, layout collectionViewLayout: NSCollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> NSSize {
+
+    return NSSize(
+      width: collectionView.frame.size.width,
+      height: 40
+    )
   }
 }

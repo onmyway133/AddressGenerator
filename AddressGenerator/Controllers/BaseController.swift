@@ -9,15 +9,8 @@
 import AppKit
 
 class BaseController: NSViewController {
-  let containerView = NSBox()
-
   override func loadView() {
-    containerView.title = ""
-    containerView.borderType = .noBorder
-    self.view = containerView
-  }
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
+    self.view = NSView()
+    self.view.wantsLayer = true
   }
 }
