@@ -12,6 +12,8 @@ class BaseController: NSViewController {
   let containerView = NSBox()
 
   override func loadView() {
+    containerView.title = ""
+    containerView.borderType = .noBorder
     self.view = containerView
   }
 
