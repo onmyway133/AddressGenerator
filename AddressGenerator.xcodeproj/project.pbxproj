@@ -20,6 +20,7 @@
 		D255709E1FEBD2B200AA443F /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255709D1FEBD2B100AA443F /* MainController.swift */; };
 		D25570A01FEBD51800AA443F /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255709F1FEBD51800AA443F /* WindowController.swift */; };
 		D25570A21FEBD70900AA443F /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25570A11FEBD70900AA443F /* BaseController.swift */; };
+		D25570A41FEBDCCD00AA443F /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25570A31FEBDCCD00AA443F /* Cell.swift */; };
 		D25DDE541FE9634000E68662 /* SwiftBaseX.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25DDE531FE9634000E68662 /* SwiftBaseX.swift */; };
 		D25DDE561FE9697D00E68662 /* WalletImportFormatGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25DDE551FE9697D00E68662 /* WalletImportFormatGenerator.swift */; };
 		D2EDF51C1FEAC0C4009BF07B /* EthereumGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EDF5191FEAC0C4009BF07B /* EthereumGenerator.swift */; };
@@ -76,6 +77,7 @@
 		D255709D1FEBD2B100AA443F /* MainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 		D255709F1FEBD51800AA443F /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		D25570A11FEBD70900AA443F /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		D25570A31FEBDCCD00AA443F /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		D25DDE531FE9634000E68662 /* SwiftBaseX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftBaseX.swift; sourceTree = "<group>"; };
 		D25DDE551FE9697D00E68662 /* WalletImportFormatGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletImportFormatGenerator.swift; sourceTree = "<group>"; };
 		D2EDF5191FEAC0C4009BF07B /* EthereumGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EthereumGenerator.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				D255709B1FEBD07400AA443F /* Label.swift */,
+				D25570A31FEBDCCD00AA443F /* Cell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */,
 				D218E94A1FE2C6DD00438A19 /* Data+Extensions.swift in Sources */,
 				D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */,
+				D25570A41FEBDCCD00AA443F /* Cell.swift in Sources */,
 				D2EDF53F1FEAD909009BF07B /* Account.swift in Sources */,
 				D25570A01FEBD51800AA443F /* WindowController.swift in Sources */,
 				D2EDF53D1FEAD792009BF07B /* Manager.swift in Sources */,
