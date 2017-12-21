@@ -1,12 +1,15 @@
 PODS:
   - Anchors (2.2.1)
+  - Omnia (3.0.0)
 
 DEPENDENCIES:
-  - Anchors
+  - Anchors (~> 2.0)
+  - Omnia (~> 3.0)
 
 SPEC CHECKSUMS:
   Anchors: c1dd44c918ec9fb331e1f786546950e36a50a337
+  Omnia: 6dcb30832bd69ec18b981bbb8d66f066c38c35eb
 
-PODFILE CHECKSUM: e601e316a3726b9768e047d8d1ab8186ced66ae8
+PODFILE CHECKSUM: 1ffe58fb0e9f1463f2a4ed009e26dc30c1f859db
 
 COCOAPODS: 1.3.1
