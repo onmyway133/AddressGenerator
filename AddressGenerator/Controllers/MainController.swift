@@ -18,10 +18,7 @@ final class MainController: NSViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    print("abc")
     setup()
-    print("abc")
-    print(containerView)
   }
 
   func setup() {
@@ -30,8 +27,6 @@ final class MainController: NSViewController {
     activate(
       containerView.anchor.edges
     )
-
-    return
 
     addChildViewController(coinsController)
     containerView.addSubview(coinsController.view)
