@@ -11,6 +11,7 @@ import Anchors
 
 final class CoinsController: BaseController, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
   var titleLabel: Label!
+  var scrollView: NSScrollView!
   var collectionView: NSCollectionView!
   let coins = CoinList.allCoins
   var select: ((CoinAware) -> Void)?
@@ -22,29 +23,42 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
   }
 
   func setup() {
-    titleLabel = Label()
-    titleLabel.textColor = .white
-    titleLabel.stringValue = "Choose currency"
-    view.addSubview(titleLabel)
-    activate(
-      titleLabel.anchor.top.left
-    )
+    do {
+      titleLabel = Label()
+      titleLabel.textColor = .white
+      titleLabel.stringValue = "Choose currency"
+      view.addSubview(titleLabel)
+      activate(
+        titleLabel.anchor.top.left
+      )
+    }
 
-    let layout = NSCollectionViewFlowLayout()
-    layout.minimumLineSpacing = 4
+    do {
+      let layout = NSCollectionViewFlowLayout()
+      layout.minimumLineSpacing = 4
 
-    collectionView = NSCollectionView()
-    collectionView.dataSource = self
-    collectionView.delegate = self
-    collectionView.collectionViewLayout = layout
-    collectionView.allowsMultipleSelection = false
-    collectionView.backgroundColors = [.clear]
+      collectionView = NSCollectionView()
+      collectionView.dataSource = self
+      collectionView.delegate = self
+      collectionView.collectionViewLayout = layout
+      collectionView.allowsMultipleSelection = false
+      collectionView.backgroundColors = [.clear]
+      collectionView.register(
+        Cell.self,
+        forItemWithIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell")
+      )
+    }
 
-    view.addSubview(collectionView)
-    activate(
-      collectionView.anchor.top.equal.to(titleLabel.anchor.bottom).constant(10),
-      collectionView.anchor.left.bottom.right
-    )
+    do {
+      scrollView = NSScrollView()
+      scrollView.documentView = collectionView
+      view.addSubview(scrollView)
+
+      activate(
+        scrollView.anchor.top.equal.to(titleLabel.anchor.bottom).constant(10),
+        scrollView.anchor.left.bottom.right
+      )
+    }
   }
 
   // MARK: - NSCollectionViewDataSource
@@ -54,7 +68,11 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
   }
 
   func collectionView(_ collectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-    let cell = Cell()
+    let cell = collectionView.makeItem(
+      withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "Cell"),
+      for: indexPath
+    ) as! Cell
+
     let coin = coins[indexPath.item]
 
     cell.label.stringValue = coin.name
