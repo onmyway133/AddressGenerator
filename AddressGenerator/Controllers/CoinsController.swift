@@ -23,17 +23,23 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
 
   func setup() {
     titleLabel = Label()
+    titleLabel.textColor = .white
     titleLabel.stringValue = "Choose currency"
     view.addSubview(titleLabel)
     activate(
       titleLabel.anchor.top.left
     )
 
+    let layout = NSCollectionViewFlowLayout()
+    layout.minimumLineSpacing = 4
+
     collectionView = NSCollectionView()
     collectionView.dataSource = self
     collectionView.delegate = self
-    collectionView.collectionViewLayout = NSCollectionViewFlowLayout()
+    collectionView.collectionViewLayout = layout
     collectionView.allowsMultipleSelection = false
+    collectionView.backgroundColors = [.clear]
+
     view.addSubview(collectionView)
     activate(
       collectionView.anchor.top.equal.to(titleLabel.anchor.bottom).constant(10),
@@ -52,7 +58,9 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
     let coin = coins[indexPath.item]
 
     cell.label.stringValue = coin.name
-    cell.imageView?.image = NSImage(named: NSImage.Name(rawValue: coin.name))
+    cell.coinImageView.image =
+      NSImage(named: NSImage.Name(rawValue: coin.name))
+      ?? NSImage(named: NSImage.Name(rawValue: "Others"))
 
     return cell
   }

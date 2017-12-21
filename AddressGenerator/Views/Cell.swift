@@ -26,9 +26,15 @@ final class Cell: NSCollectionViewItem {
       coinImageView, label
     ])
 
+    label.textColor = .white
+
+    view.wantsLayer = true
+    view.layer?.cornerRadius = 2
+    view.layer?.backgroundColor = NSColor(e_hex: "#1E1E1E").cgColor
+
     activate(
-      coinImageView.anchor.top.left.constant(10),
-      coinImageView.anchor.bottom.constant(-10),
+      coinImageView.anchor.top.left.constant(4),
+      coinImageView.anchor.bottom.constant(-4),
       coinImageView.anchor.width.ratio(1),
 
       label.anchor.centerY.equal.to(coinImageView.anchor.centerY),

@@ -13,5 +13,6 @@ final class WindowController: NSWindowController {
     super.windowDidLoad()
 
     window?.setContentSize(NSSize(width: 800, height: 600))
+    window?.backgroundColor = NSColor(e_hex: "#333333")
   }
 }
