@@ -17,6 +17,10 @@ final class MainController: BaseController {
     super.viewDidLoad()
 
     setup()
+
+    coinsController.select = { [weak self] coin in
+      self?.handle(coin: coin)
+    }
   }
 
   func setup() {
@@ -38,6 +42,10 @@ final class MainController: BaseController {
       accountController.view.anchor.top.constant(10),
       accountController.view.anchor.right.bottom.constant(-10)
     )
+  }
+
+  func handle(coin: CoinAware) {
+
   }
 }
 

@@ -13,6 +13,7 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
   var titleLabel: Label!
   var collectionView: NSCollectionView!
   let coins = CoinList.allCoins
+  var select: ((CoinAware) -> Void)?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -32,6 +33,7 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
     collectionView.dataSource = self
     collectionView.delegate = self
     collectionView.collectionViewLayout = NSCollectionViewFlowLayout()
+    collectionView.allowsMultipleSelection = false
     view.addSubview(collectionView)
     activate(
       collectionView.anchor.top.equal.to(titleLabel.anchor.bottom).constant(10),
@@ -50,4 +52,14 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
   }
 
   // MARK: - NSCollectionViewDelegate
+
+  func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+    guard let indexPath = indexPaths.first else {
+      assertionFailure()
+      return
+    }
+
+    let coin = coins[indexPath.item]
+    select?(coin)
+  }
 }
