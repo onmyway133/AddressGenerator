@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		61689E2C7EEC96F5AAB50DB2 /* Pods_AddressGenerator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7753C92C713B97532BDE1954 /* Pods_AddressGenerator.framework */; };
+		D218AAA220012EC8004A252D /* Ripple.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA120012EC8004A252D /* Ripple.swift */; };
+		D218AAA420012F03004A252D /* RippleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA320012F03004A252D /* RippleGenerator.swift */; };
+		D218AAA62001337F004A252D /* PublicKeyCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA52001337F004A252D /* PublicKeyCompressor.swift */; };
+		D218AAA82001378A004A252D /* RippleGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA72001378A004A252D /* RippleGeneratorTests.swift */; };
 		D218E9131FE2C37800438A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9121FE2C37800438A19 /* AppDelegate.swift */; };
 		D218E9171FE2C37800438A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D218E9161FE2C37800438A19 /* Assets.xcassets */; };
 		D218E91A1FE2C37800438A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D218E9181FE2C37800438A19 /* Main.storyboard */; };
@@ -60,6 +64,10 @@
 		5063F40B8222686F291286C0 /* Pods-AddressGenerator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressGenerator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AddressGenerator/Pods-AddressGenerator.debug.xcconfig"; sourceTree = "<group>"; };
 		7753C92C713B97532BDE1954 /* Pods_AddressGenerator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AddressGenerator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9872C9EAB1987817A1ADC5ED /* Pods-AddressGenerator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AddressGenerator.release.xcconfig"; path = "Pods/Target Support Files/Pods-AddressGenerator/Pods-AddressGenerator.release.xcconfig"; sourceTree = "<group>"; };
+		D218AAA120012EC8004A252D /* Ripple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ripple.swift; sourceTree = "<group>"; };
+		D218AAA320012F03004A252D /* RippleGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleGenerator.swift; sourceTree = "<group>"; };
+		D218AAA52001337F004A252D /* PublicKeyCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyCompressor.swift; sourceTree = "<group>"; };
+		D218AAA72001378A004A252D /* RippleGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleGeneratorTests.swift; sourceTree = "<group>"; };
 		D218E90F1FE2C37800438A19 /* AddressGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D218E9121FE2C37800438A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D218E9161FE2C37800438A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 				D2EDF52D1FEACC5A009BF07B /* WalletImportGeneratorTests.swift */,
 				D2EDF5331FEAD20B009BF07B /* EthereumGeneratorTests.swift */,
 				D2EDF5421FEAE06C009BF07B /* CoinListTests.swift */,
+				D218AAA72001378A004A252D /* RippleGeneratorTests.swift */,
 			);
 			path = AddressGeneratorTests;
 			sourceTree = "<group>";
@@ -225,6 +234,8 @@
 				D25DDE551FE9697D00E68662 /* WalletImportFormatGenerator.swift */,
 				D2EDF53C1FEAD792009BF07B /* Manager.swift */,
 				D2EDF5401FEADA0C009BF07B /* CoinList.swift */,
+				D218AAA320012F03004A252D /* RippleGenerator.swift */,
+				D218AAA52001337F004A252D /* PublicKeyCompressor.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -276,6 +287,7 @@
 				D2EDF5381FEAD5C0009BF07B /* Ethereum.swift */,
 				D2EDF53A1FEAD72B009BF07B /* CoinAware.swift */,
 				D2EDF53E1FEAD909009BF07B /* Account.swift */,
+				D218AAA120012EC8004A252D /* Ripple.swift */,
 			);
 			path = Coin;
 			sourceTree = "<group>";
@@ -446,9 +458,11 @@
 				D2EDF53B1FEAD72B009BF07B /* CoinAware.swift in Sources */,
 				D2FEFACD1FE890E20047FCBF /* KeyPairGenerator.swift in Sources */,
 				D218E94A1FE2C6DD00438A19 /* Data+Extensions.swift in Sources */,
+				D218AAA420012F03004A252D /* RippleGenerator.swift in Sources */,
 				D2FEFACF1FE8916D0047FCBF /* InternalError.swift in Sources */,
 				D25570A41FEBDCCD00AA443F /* Cell.swift in Sources */,
 				D2EDF53F1FEAD909009BF07B /* Account.swift in Sources */,
+				D218AAA220012EC8004A252D /* Ripple.swift in Sources */,
 				D25570A01FEBD51800AA443F /* WindowController.swift in Sources */,
 				D2EDF53D1FEAD792009BF07B /* Manager.swift in Sources */,
 				D2EDF51D1FEAC0C4009BF07B /* Pay2ScriptHashGenerator.swift in Sources */,
@@ -465,6 +479,7 @@
 				D2EDF5411FEADA0C009BF07B /* CoinList.swift in Sources */,
 				D218E94D1FE2C9B300438A19 /* Task.swift in Sources */,
 				D2EDF51E1FEAC0C4009BF07B /* Pay2PubKeyHashGenerator.swift in Sources */,
+				D218AAA62001337F004A252D /* PublicKeyCompressor.swift in Sources */,
 				D2EDF5391FEAD5C0009BF07B /* Ethereum.swift in Sources */,
 				D2EDF5241FEAC809009BF07B /* sha3.c in Sources */,
 				D25570971FEBCDBD00AA443F /* CoinsController.swift in Sources */,
@@ -479,6 +494,7 @@
 				D218E9261FE2C37800438A19 /* AddressGeneratorTests.swift in Sources */,
 				D2EDF5431FEAE06C009BF07B /* CoinListTests.swift in Sources */,
 				D2EDF52C1FEACC27009BF07B /* DataExtensionsTests.swift in Sources */,
+				D218AAA82001378A004A252D /* RippleGeneratorTests.swift in Sources */,
 				D2EDF5341FEAD20B009BF07B /* EthereumGeneratorTests.swift in Sources */,
 				D2EDF52A1FEACC0D009BF07B /* KeyPairGeneratorTests.swift in Sources */,
 				D2EDF52E1FEACC5A009BF07B /* WalletImportGeneratorTests.swift in Sources */,
