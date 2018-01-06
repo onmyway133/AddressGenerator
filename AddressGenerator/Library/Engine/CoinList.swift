@@ -11,7 +11,8 @@ struct CoinList {
 
   static let firstCoins: [CoinAware] = [
     Bitcoin(name: "Bitcoin", publicKeyPrefix: 0x00, privateKeyPrefix: 0x80, "5", "[LK]"),
-    Ethereum(name: "Ethereum")
+    Ethereum(name: "Ethereum"),
+    Ripple()
   ]
 
   static let coins: [CoinAware] = [

@@ -12,6 +12,7 @@
 		D218AAA420012F03004A252D /* RippleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA320012F03004A252D /* RippleGenerator.swift */; };
 		D218AAA62001337F004A252D /* PublicKeyCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA52001337F004A252D /* PublicKeyCompressor.swift */; };
 		D218AAA82001378A004A252D /* RippleGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA72001378A004A252D /* RippleGeneratorTests.swift */; };
+		D218AAAA20013822004A252D /* PublicKeyCompressorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAA920013822004A252D /* PublicKeyCompressorTests.swift */; };
 		D218E9131FE2C37800438A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9121FE2C37800438A19 /* AppDelegate.swift */; };
 		D218E9171FE2C37800438A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D218E9161FE2C37800438A19 /* Assets.xcassets */; };
 		D218E91A1FE2C37800438A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D218E9181FE2C37800438A19 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		D218AAA320012F03004A252D /* RippleGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleGenerator.swift; sourceTree = "<group>"; };
 		D218AAA52001337F004A252D /* PublicKeyCompressor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyCompressor.swift; sourceTree = "<group>"; };
 		D218AAA72001378A004A252D /* RippleGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleGeneratorTests.swift; sourceTree = "<group>"; };
+		D218AAA920013822004A252D /* PublicKeyCompressorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicKeyCompressorTests.swift; sourceTree = "<group>"; };
 		D218E90F1FE2C37800438A19 /* AddressGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D218E9121FE2C37800438A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D218E9161FE2C37800438A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				D2EDF5331FEAD20B009BF07B /* EthereumGeneratorTests.swift */,
 				D2EDF5421FEAE06C009BF07B /* CoinListTests.swift */,
 				D218AAA72001378A004A252D /* RippleGeneratorTests.swift */,
+				D218AAA920013822004A252D /* PublicKeyCompressorTests.swift */,
 			);
 			path = AddressGeneratorTests;
 			sourceTree = "<group>";
@@ -498,6 +501,7 @@
 				D2EDF5341FEAD20B009BF07B /* EthereumGeneratorTests.swift in Sources */,
 				D2EDF52A1FEACC0D009BF07B /* KeyPairGeneratorTests.swift in Sources */,
 				D2EDF52E1FEACC5A009BF07B /* WalletImportGeneratorTests.swift in Sources */,
+				D218AAAA20013822004A252D /* PublicKeyCompressorTests.swift in Sources */,
 				D2EDF5281FEACC01009BF07B /* KeccakHashTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
