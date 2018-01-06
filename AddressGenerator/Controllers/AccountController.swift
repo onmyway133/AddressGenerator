@@ -26,6 +26,9 @@ final class AccountController: BaseController {
   private let wifLabel = Label()
   private let wifValueLabel = Label()
 
+  private let aboutButton = NSButton()
+  private let gitHubUrl = "https://github.com/onmyway133/AddressGenerator"
+
   var coin: CoinAware! {
     didSet {
       coinNameLabel.stringValue = coin.name
@@ -44,7 +47,8 @@ final class AccountController: BaseController {
       addressLabel, addressValueLabel,
       publicKeyLabel, publicKeyValueLabel,
       privateKeyLabel, privateKeyValueLabel,
-      wifLabel, wifValueLabel
+      wifLabel, wifValueLabel,
+      aboutButton
     ])
 
     coinNameLabel.font = NSFont.systemFont(ofSize: 25, weight: .bold)
@@ -53,9 +57,7 @@ final class AccountController: BaseController {
     }
     [addressValueLabel, publicKeyValueLabel, privateKeyValueLabel, wifValueLabel].forEach {
       $0.font = NSFont.systemFont(ofSize: 15)
-      $0.lineBreakMode = .byCharWrapping
-      $0.maximumNumberOfLines = 0
-      $0.textColor = NSColor(e_hex: "FD4514")
+      $0.textColor = NSColor(e_hex: "#e67e22")
       $0.isSelectable = true
     }
 
@@ -67,6 +69,20 @@ final class AccountController: BaseController {
     button.title = "Generate"
     button.target = self
     button.action = #selector(generate)
+
+    do {
+      let attributeString = NSAttributedString(
+        string: "GitHub: \(gitHubUrl)",
+        attributes: [
+          .foregroundColor: NSColor(e_hex: "#f1c40f")
+        ]
+      )
+
+      aboutButton.attributedTitle = attributeString
+      aboutButton.isBordered = false
+      aboutButton.target = self
+      aboutButton.action = #selector(about)
+    }
 
     setupConstraints()
   }
@@ -88,9 +104,13 @@ final class AccountController: BaseController {
     }
   }
 
+  @objc private func about() {
+    NSWorkspace.shared.open(URL(string: gitHubUrl)!)
+  }
+
   private func setupConstraints() {
     activate(
-      coinNameLabel.anchor.top.constant(10),
+      coinNameLabel.anchor.top.constant(20),
       coinNameLabel.anchor.centerX,
 
       button.anchor.top.equal.to(coinNameLabel.anchor.bottom).constant(10),
@@ -108,7 +128,7 @@ final class AccountController: BaseController {
       addressLabel.anchor.centerX,
 
       addressValueLabel.anchor.top.equal
-        .to(addressLabel.anchor.bottom).constant(10),
+        .to(addressLabel.anchor.bottom).constant(5),
       addressValueLabel.anchor.centerX,
 
       publicKeyLabel.anchor.top.equal
@@ -134,6 +154,11 @@ final class AccountController: BaseController {
       wifValueLabel.anchor.top.equal
         .to(wifLabel.anchor.bottom).constant(5),
       wifValueLabel.anchor.left.constant(10)
+    )
+
+    activate(
+      aboutButton.anchor.top,
+      aboutButton.anchor.right.constant(-2)
     )
   }
 }
