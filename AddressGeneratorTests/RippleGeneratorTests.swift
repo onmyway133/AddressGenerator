@@ -15,7 +15,7 @@ class RippleTests: XCTestCase {
     let address = try! RippleGenerator().generate(publicKey: publicKeyData)
 
     XCTAssertEqual(address.count, 34)
-    XCTAssertEqual(address, "3f5b765f6a9007a7a08b07c04acd391441045c1d")
+    XCTAssertEqual(address, "rwqkk7T1h47vj84gkBwHn7HtdmekgsRZwJ")
   }
 }
 

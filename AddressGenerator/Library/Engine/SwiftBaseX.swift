@@ -10,6 +10,13 @@
 
 import Foundation
 
+enum Base58Alphabet: String {
+  case normal = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+
+  // R_B58_DICT from https://ripple.com/build/accounts/
+  case ripple = "rpshnaf39wBUDNEGHJKLM4PQRST7VWXYZ2bcdeCg65jkm8oFqi1tuvAxyz"
+}
+
 private func buildAlphabetBase(_ alphabet: String) -> (map: [Character:UInt], indexed: [Character], base: UInt, leader: Character) {
   let characters = alphabet
   let indexed:[Character] = characters.map {$0}
@@ -23,8 +30,6 @@ private func buildAlphabetBase(_ alphabet: String) -> (map: [Character:UInt], in
   let finalMap = tmpMap
   return (map: finalMap, indexed: indexed, base: UInt(characters.count), leader: characters.first!)
 }
-
-private let BASE58 = buildAlphabetBase("123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
 
 private func encodeData(alpha: (map:[Character:UInt], indexed:[Character], base: UInt, leader: Character), data: Data) -> String {
   if data.count == 0 {
@@ -65,7 +70,10 @@ private func encodeData(alpha: (map:[Character:UInt], indexed:[Character], base:
 }
 
 extension Data {
-  func base58EncodedString() -> String {
-    return encodeData(alpha: BASE58, data: self)
+  func base58EncodedString(alphabet: String = Base58Alphabet.normal.rawValue) -> String {
+    return encodeData(
+      alpha: buildAlphabetBase(alphabet),
+      data: self
+    )
   }
 }

@@ -18,23 +18,21 @@ struct RippleGenerator {
       // This value is the "Account ID"
       .sha256()
       .rmd160()
+
+    let payload = accountId
       // "r" in Ripple base58
       .prepend(number: 0x00)
 
     // Calculate the SHA-256 hash of the SHA-256 hash of the Account ID;
     // take the first 4 bytes. This value is the "checksum".
-    let checksum = try accountId
-      // 5 - Perform SHA-256 hash on the extended RIPEMD-160 result
+    let checksum = try payload
       .sha256()
-      // 6 - Perform SHA-256 hash on the result of the previous SHA-256 hash
       .sha256()
-      // 7 - Take the first 4 bytes of the second SHA-256 hash. This is the address checksum
       .takeFirst(byteCount: 4)
 
-    // 8 - Add the 4 checksum bytes from stage 7 at the end of extended RIPEMD-160 hash from stage 4.
-    // This is the 25-byte binary Bitcoin Address.
-    let address = accountId.append(data: checksum)
+    // Concatenate the payload and the checksum. Calculate the base58 value of the concatenated buffer. The result is the address.
+    let address = payload.append(data: checksum)
 
-    return address.base58EncodedString()
+    return address.base58EncodedString(alphabet: Base58Alphabet.ripple.rawValue)
   }
 }
