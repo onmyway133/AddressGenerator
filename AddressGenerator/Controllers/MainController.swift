@@ -46,7 +46,7 @@ final class MainController: BaseController {
   }
 
   func handle(coin: CoinAware) {
-
+    accountController.coin = coin
   }
 }
 

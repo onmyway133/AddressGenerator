@@ -10,10 +10,10 @@ import AppKit
 import Anchors
 
 final class CoinsController: BaseController, NSCollectionViewDataSource, NSCollectionViewDelegateFlowLayout {
-  var titleLabel: Label!
-  var scrollView: NSScrollView!
-  var collectionView: NSCollectionView!
-  let coins = CoinList.allCoins
+  private var titleLabel: Label!
+  private var scrollView: NSScrollView!
+  private var collectionView: NSCollectionView!
+  private let coins = CoinList.allCoins
   var select: ((CoinAware) -> Void)?
 
   override func viewDidLoad() {
@@ -22,7 +22,20 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
     setup()
   }
 
-  func setup() {
+  override func viewWillAppear() {
+    super.viewWillAppear()
+
+    selectFirstInitially()
+  }
+
+  private func selectFirstInitially() {
+    let indexPath = IndexPath(item: 0, section: 0)
+    let set = Set(arrayLiteral: indexPath)
+    collectionView.selectItems(at: set, scrollPosition: .top)
+    collectionView(collectionView, didSelectItemsAt: set)
+  }
+
+  private func setup() {
     do {
       titleLabel = Label()
       titleLabel.textColor = .white

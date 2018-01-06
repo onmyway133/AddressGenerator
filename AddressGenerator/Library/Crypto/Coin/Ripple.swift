@@ -19,7 +19,7 @@ struct Ripple: CoinAware {
       rawPrivateKey: pair.privateKey.hexDump().toString(),
       rawPublicKey: pair.publicKey.hexDump().toString(),
       address: address,
-      walletImportFormat: ""
+      walletImportFormat: nil
     )
   }
 }
