@@ -157,8 +157,7 @@ final class AccountController: BaseController {
     )
 
     activate(
-      aboutButton.anchor.top,
-      aboutButton.anchor.right.constant(-2)
+      aboutButton.anchor.top.right
     )
   }
 }
