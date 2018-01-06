@@ -7,6 +7,7 @@
 //
 
 import AppKit
+import Anchors
 
 final class AccountController: BaseController {
   override func viewDidLoad() {

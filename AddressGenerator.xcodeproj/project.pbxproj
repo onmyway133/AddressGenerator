@@ -32,6 +32,7 @@
 		D218AADD20013D56004A252D /* RippleGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAC620013D56004A252D /* RippleGenerator.swift */; };
 		D218AADE20013D56004A252D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAC720013D56004A252D /* Task.swift */; };
 		D218AADF20013D56004A252D /* Pay2PubKeyHashGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAC820013D56004A252D /* Pay2PubKeyHashGenerator.swift */; };
+		D218AAE220013DB8004A252D /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218AAE120013DB8004A252D /* QRCodeGenerator.swift */; };
 		D218E9131FE2C37800438A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9121FE2C37800438A19 /* AppDelegate.swift */; };
 		D218E9171FE2C37800438A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D218E9161FE2C37800438A19 /* Assets.xcassets */; };
 		D218E91A1FE2C37800438A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D218E9181FE2C37800438A19 /* Main.storyboard */; };
@@ -91,6 +92,7 @@
 		D218AAC720013D56004A252D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		D218AAC820013D56004A252D /* Pay2PubKeyHashGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pay2PubKeyHashGenerator.swift; sourceTree = "<group>"; };
 		D218AAE020013D87004A252D /* AddressGenerator-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AddressGenerator-Bridging-Header.h"; sourceTree = "<group>"; };
+		D218AAE120013DB8004A252D /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		D218E90F1FE2C37800438A19 /* AddressGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AddressGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D218E9121FE2C37800438A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D218E9161FE2C37800438A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		D218AAC920013D56004A252D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D218AAE120013DB8004A252D /* QRCodeGenerator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				D218AACA20013D56004A252D /* KeccakHash.swift in Sources */,
 				D25570A01FEBD51800AA443F /* WindowController.swift in Sources */,
 				D218AAD420013D56004A252D /* CoinList.swift in Sources */,
+				D218AAE220013DB8004A252D /* QRCodeGenerator.swift in Sources */,
 				D255709A1FEBCDE600AA443F /* AccountController.swift in Sources */,
 				D218AADB20013D56004A252D /* WalletImportFormatGenerator.swift in Sources */,
 				D218AADA20013D56004A252D /* EthereumGenerator.swift in Sources */,
