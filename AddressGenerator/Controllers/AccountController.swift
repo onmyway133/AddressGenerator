@@ -29,6 +29,8 @@ final class AccountController: BaseController {
   private let aboutButton = NSButton()
   private let gitHubUrl = "https://github.com/onmyway133/AddressGenerator"
 
+  private let progressIndicator = NSProgressIndicator()
+
   var coin: CoinAware! {
     didSet {
       coinNameLabel.stringValue = coin.name
@@ -48,7 +50,8 @@ final class AccountController: BaseController {
       publicKeyLabel, publicKeyValueLabel,
       privateKeyLabel, privateKeyValueLabel,
       wifLabel, wifValueLabel,
-      aboutButton
+      aboutButton,
+      progressIndicator
     ])
 
     coinNameLabel.font = NSFont.systemFont(ofSize: 25, weight: .bold)
@@ -68,7 +71,12 @@ final class AccountController: BaseController {
 
     button.title = "Generate"
     button.target = self
-    button.action = #selector(generate)
+    button.action = #selector(generateButtonTouched)
+
+    progressIndicator.style = .spinning
+    progressIndicator.controlTint = .blueControlTint
+    progressIndicator.startAnimation(nil)
+    progressIndicator.alphaValue = 0
 
     do {
       let attributeString = NSAttributedString(
@@ -87,21 +95,29 @@ final class AccountController: BaseController {
     setupConstraints()
   }
 
-  @objc private func generate() {
-    do {
-      let account = try coin.generate()
-      addressValueLabel.stringValue = account.address
-      publicKeyValueLabel.stringValue = account.rawPublicKey
-      privateKeyValueLabel.stringValue = account.rawPrivateKey
-      wifValueLabel.stringValue = account.walletImportFormat ?? ""
-
-      addressImageView.image = QRCodeGenerator().generate(
-        string: account.address,
-        size: addressImageView.frame.size
-      )
-    } catch {
-
+  @objc private func generateButtonTouched() {
+    progressIndicator.alphaValue = 1
+    DispatchQueue.global().async {
+      do {
+        let account = try self.coin.generate()
+        DispatchQueue.main.async {
+          self.update(account: account)
+          self.progressIndicator.alphaValue = 0
+        }
+      } catch {}
     }
+  }
+
+  private func update(account: Account) {
+    addressValueLabel.stringValue = account.address
+    publicKeyValueLabel.stringValue = account.rawPublicKey
+    privateKeyValueLabel.stringValue = account.rawPrivateKey
+    wifValueLabel.stringValue = account.walletImportFormat ?? ""
+
+    addressImageView.image = QRCodeGenerator().generate(
+      string: account.address,
+      size: addressImageView.frame.size
+    )
   }
 
   @objc private func about() {
@@ -117,6 +133,9 @@ final class AccountController: BaseController {
       button.anchor.centerX,
       button.anchor.width.equal.to(100),
       button.anchor.height.equal.to(30),
+
+      progressIndicator.anchor.left.equal.to(button.anchor.right).constant(10),
+      progressIndicator.anchor.centerY.equal.to(button.anchor.centerY),
 
       addressImageView.anchor.top.equal.to(button.anchor.bottom).constant(30),
       addressImageView.anchor.centerX,
