@@ -12,7 +12,7 @@ final class WindowController: NSWindowController {
   override func windowDidLoad() {
     super.windowDidLoad()
 
-    window?.setContentSize(NSSize(width: 800, height: 600))
+    window?.setContentSize(NSSize(width: 900, height: 600))
     window?.backgroundColor = NSColor(e_hex: "#333333")
   }
 }

@@ -38,7 +38,7 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
   private func setup() {
     do {
       titleLabel = Label()
-      titleLabel.textColor = .white
+      titleLabel.font = NSFont.systemFont(ofSize: 15, weight: .semibold)
       titleLabel.stringValue = "Choose currency"
       view.addSubview(titleLabel)
       activate(
