@@ -47,7 +47,7 @@ final class AccountController: BaseController {
       wifLabel, wifValueLabel
     ])
 
-    coinNameLabel.font = NSFont.systemFont(ofSize: 20, weight: .bold)
+    coinNameLabel.font = NSFont.systemFont(ofSize: 25, weight: .bold)
     [addressLabel, publicKeyLabel, privateKeyLabel, wifLabel].forEach {
       $0.font = NSFont.systemFont(ofSize: 15, weight: .semibold)
     }
@@ -79,7 +79,10 @@ final class AccountController: BaseController {
       privateKeyValueLabel.stringValue = account.rawPrivateKey
       wifValueLabel.stringValue = account.walletImportFormat ?? ""
 
-      addressImageView.image = QRCodeGenerator().generate(string: account.address)
+      addressImageView.image = QRCodeGenerator().generate(
+        string: account.address,
+        size: addressImageView.frame.size
+      )
     } catch {
 
     }
@@ -87,7 +90,7 @@ final class AccountController: BaseController {
 
   private func setupConstraints() {
     activate(
-      coinNameLabel.anchor.top.constant(20),
+      coinNameLabel.anchor.top.constant(10),
       coinNameLabel.anchor.centerX,
 
       button.anchor.top.equal.to(coinNameLabel.anchor.bottom).constant(10),
@@ -95,7 +98,7 @@ final class AccountController: BaseController {
       button.anchor.width.equal.to(100),
       button.anchor.height.equal.to(30),
 
-      addressImageView.anchor.top.equal.to(button.anchor.bottom).constant(10),
+      addressImageView.anchor.top.equal.to(button.anchor.bottom).constant(30),
       addressImageView.anchor.centerX,
       addressImageView.anchor.width.equal.to(200),
       addressImageView.anchor.height.ratio(1),
@@ -105,15 +108,15 @@ final class AccountController: BaseController {
       addressLabel.anchor.centerX,
 
       addressValueLabel.anchor.top.equal
-        .to(addressLabel.anchor.bottom).constant(20),
+        .to(addressLabel.anchor.bottom).constant(10),
       addressValueLabel.anchor.centerX,
 
       publicKeyLabel.anchor.top.equal
-        .to(addressValueLabel.anchor.bottom).constant(10),
+        .to(addressValueLabel.anchor.bottom).constant(20),
       publicKeyLabel.anchor.left.constant(10),
 
       publicKeyValueLabel.anchor.top.equal
-        .to(publicKeyLabel.anchor.bottom).constant(10),
+        .to(publicKeyLabel.anchor.bottom).constant(5),
       publicKeyValueLabel.anchor.left.constant(10),
 
       privateKeyLabel.anchor.top.equal
@@ -121,7 +124,7 @@ final class AccountController: BaseController {
       privateKeyLabel.anchor.left.constant(10),
 
       privateKeyValueLabel.anchor.top.equal
-        .to(privateKeyLabel.anchor.bottom).constant(10),
+        .to(privateKeyLabel.anchor.bottom).constant(5),
       privateKeyValueLabel.anchor.left.constant(10),
 
       wifLabel.anchor.top.equal
@@ -129,7 +132,7 @@ final class AccountController: BaseController {
       wifLabel.anchor.left.constant(10),
 
       wifValueLabel.anchor.top.equal
-        .to(wifLabel.anchor.bottom).constant(10),
+        .to(wifLabel.anchor.bottom).constant(5),
       wifValueLabel.anchor.left.constant(10)
     )
   }

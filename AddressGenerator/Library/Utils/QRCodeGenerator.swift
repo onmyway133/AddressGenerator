@@ -9,11 +9,12 @@
 import AppKit
 
 final class QRCodeGenerator {
-  func generate(string: String) -> NSImage? {
+  func generate(string: String, size: CGSize) -> NSImage? {
     guard let data = string.data(using: .utf8) else {
       return nil
     }
 
+    // Filter
     guard let filter = CIFilter(name: "CIQRCodeGenerator") else {
       return nil
     }
@@ -21,14 +22,23 @@ final class QRCodeGenerator {
     filter.setValue(data, forKey: "inputMessage")
     filter.setValue("Q", forKey: "inputCorrectionLevel")
 
+    // CIImage
     guard let ciImage = filter.outputImage else {
       return nil
     }
 
+    // NSImage
     let rep = NSCIImageRep(ciImage: ciImage)
     let image = NSImage(size: rep.size)
     image.addRepresentation(rep)
 
-    return image
+    // Scale
+    let finalImage = NSImage(size: size)
+    finalImage.lockFocus()
+    NSGraphicsContext.current?.imageInterpolation = .none
+    image.draw(in: NSRect(origin: .zero, size: size))
+    finalImage.unlockFocus()
+
+    return finalImage
   }
 }
