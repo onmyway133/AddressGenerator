@@ -1,6 +1,8 @@
 Address Generator
 ==
 
+![](Screenshots/Artboard.png)
+
 ## Getting started
 
 ### Your own key pair
