@@ -37,6 +37,8 @@
 		D218E9171FE2C37800438A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D218E9161FE2C37800438A19 /* Assets.xcassets */; };
 		D218E91A1FE2C37800438A19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D218E9181FE2C37800438A19 /* Main.storyboard */; };
 		D218E9261FE2C37800438A19 /* AddressGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D218E9251FE2C37800438A19 /* AddressGeneratorTests.swift */; };
+		D24EF2912002D770002ECD08 /* MoneroGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24EF2902002D770002ECD08 /* MoneroGenerator.swift */; };
+		D24EF2932002D78E002ECD08 /* Monero.swift in Sources */ = {isa = PBXBuildFile; fileRef = D24EF2922002D78E002ECD08 /* Monero.swift */; };
 		D25570971FEBCDBD00AA443F /* CoinsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25570961FEBCDBD00AA443F /* CoinsController.swift */; };
 		D255709A1FEBCDE600AA443F /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25570991FEBCDE600AA443F /* AccountController.swift */; };
 		D255709C1FEBD07400AA443F /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = D255709B1FEBD07400AA443F /* Label.swift */; };
@@ -102,6 +104,8 @@
 		D218E9211FE2C37800438A19 /* AddressGeneratorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AddressGeneratorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D218E9251FE2C37800438A19 /* AddressGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressGeneratorTests.swift; sourceTree = "<group>"; };
 		D218E9271FE2C37900438A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D24EF2902002D770002ECD08 /* MoneroGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoneroGenerator.swift; sourceTree = "<group>"; };
+		D24EF2922002D78E002ECD08 /* Monero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monero.swift; sourceTree = "<group>"; };
 		D25570961FEBCDBD00AA443F /* CoinsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsController.swift; sourceTree = "<group>"; };
 		D25570991FEBCDE600AA443F /* AccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountController.swift; sourceTree = "<group>"; };
 		D255709B1FEBD07400AA443F /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 				D218AAB920013D56004A252D /* Ethereum.swift */,
 				D218AABA20013D56004A252D /* CoinAware.swift */,
 				D218AABB20013D56004A252D /* Account.swift */,
+				D24EF2922002D78E002ECD08 /* Monero.swift */,
 			);
 			path = Coin;
 			sourceTree = "<group>";
@@ -219,6 +224,7 @@
 				D218AAC620013D56004A252D /* RippleGenerator.swift */,
 				D218AAC720013D56004A252D /* Task.swift */,
 				D218AAC820013D56004A252D /* Pay2PubKeyHashGenerator.swift */,
+				D24EF2902002D770002ECD08 /* MoneroGenerator.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -483,9 +489,11 @@
 				D218AACC20013D56004A252D /* String+Extensions.swift in Sources */,
 				D218AACF20013D56004A252D /* Bitcoin.swift in Sources */,
 				D218AAD920013D56004A252D /* InternalError.swift in Sources */,
+				D24EF2912002D770002ECD08 /* MoneroGenerator.swift in Sources */,
 				D218AAD620013D56004A252D /* Manager.swift in Sources */,
 				D25570A41FEBDCCD00AA443F /* Cell.swift in Sources */,
 				D218AAD220013D56004A252D /* CoinAware.swift in Sources */,
+				D24EF2932002D78E002ECD08 /* Monero.swift in Sources */,
 				D218AAD320013D56004A252D /* Account.swift in Sources */,
 				D218AACA20013D56004A252D /* KeccakHash.swift in Sources */,
 				D25570A01FEBD51800AA443F /* WindowController.swift in Sources */,
