@@ -3,9 +3,13 @@ Address Generator
 
 ## Getting started
 
-### Asymetric cryptography
+### Your own key pair
 
-Would you give your money safe key to strangers? The same applies for cryptocurrencies, the money is truly yours when only you have the keys. If you know how troublesome it is to export private keys from online wallets, then you should generate your own key pair. `AddressGenerator` makes this easy.
+You can go to some websites, create an account and have them manage your online wallets there. It also means that you can lost your money when they are hacked or compromised. Also, some websites make it not easy to export the private keys.
+
+Would you give your money safe key to strangers? The same applies for cryptocurrencies, the money is truly yours when only you have the keys. You can generate your own key pair, thanks to `AddressGenerator`
+
+### Asymetric cryptography
 
 A cryptocurrency account, which is based on [Asymetric cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography), consists of 2 keys: public key and private key.
 
