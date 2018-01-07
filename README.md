@@ -1,7 +1,7 @@
 Address Generator
 ==
 
-## Get started
+## Getting started
 
 ### Asymetric cryptography
 
@@ -38,12 +38,35 @@ You deserve a safer solution ♥️
 </div>
 
 - Choose currency, then click "Generate"
+- Store address together with public key, private key in a safe place.
 
 ## Supported currencies
 
-Currently, we have
+`AddressGenerator` supports 176 currencies. Here are the list together with how to check balance.
+
+| Currency        | Balance checker |
+| -------------   | -------------   |
+| Bitcoin         | https://blockchain.info/ |
+| Ethereum        | https://etherscan.io/balancecheck-tool |
+| Ripple          | https://bithomp.com/explorer/ |
+| Litecoin        | http://explorer.litecoin.net/ |
+| ...             | ... |
+| ...             | ... |
 
 
+## How does it work
+
+- Bitcoin and similar coins addresses are based on [Technical background of version 1 Bitcoin addresses](https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses), in form of [Pay 2 Public Key Hash](https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash)
+- Ripple address is based on [XRP Ledger Accounts](https://ripple.com/build/accounts/)
+- Ethereum address and [keccak 256](https://en.wikipedia.org/wiki/SHA-3) are based on official [ethash](https://github.com/ethereum/ethash) 
+- Intial key prefixes are from [WalletGenerator](https://github.com/MichaelMure/WalletGenerator.net)
+
+## Donations
+
+If you find this project helpful, please consider donating 😝
+
+- Bitcoin: 3Fm1UYLNE7VxMeteKYSwEKaqpG3WyuESKN
+- Ethereum: 0x7f2eA797329271e1b6f1E518A34f319A884A5A19
 
 ## Licence
 
