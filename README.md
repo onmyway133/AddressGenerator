@@ -14,17 +14,19 @@ A cryptocurrency account, which is based on [Asymetric cryptography](https://en.
 
 It's important that only you own and store these keys securely 💪
 
-### Native
+### Extra dependencies
 
 Generating wallets with Javascript browsers or `electron.js` apps is a big red flag ‼️  Those are built on top of hundreds of libraries. Even if you're offline, who know if any of those dependencies are doing evil 😱
 
 You deserve a safer solution ♥️
 
+### Features
+
 `AddressGenerator` features
 
 - Use pure Swift and C code. No extra dependencies.
 - Support macOS 10.11
-- Generate key pair using `OpenSSL`. On macOS 10.13, it is [LibreSSL](https://www.libressl.org/) 2.2.7 which is a fork of OpenSSL from 2014. OpenSSL seeds from `/dev/urandom`, which guarantee good entropy, so your keys are random and secure.
+- Generate key pair using `OpenSSL`. On macOS 10.13, it is [LibreSSL](https://www.libressl.org/) 2.2.7 which is a fork of OpenSSL from 2014. OpenSSL seeds from `/dev/urandom`, which guarantees very good entropy, so your keys are truly random and secure.
 - No saving or networking. Your keys are generated and only you know about it.
 - Fast
 - Support many cryptocurrencies
