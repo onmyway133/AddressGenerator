@@ -40,12 +40,14 @@ final class Cell: NSCollectionViewItem {
     )
   }
 
-  func update(selected: Bool) {
-    if selected {
-      view.layer?.borderWidth = 1
-      view.layer?.borderColor = NSColor(e_hex: "FD4514").cgColor
-    } else {
-      view.layer?.borderWidth = 0
+  override var isSelected: Bool {
+    didSet {
+      if isSelected {
+        view.layer?.borderWidth = 1
+        view.layer?.borderColor = NSColor(e_hex: "FD4514").cgColor
+      } else {
+        view.layer?.borderWidth = 0
+      }
     }
   }
 }
