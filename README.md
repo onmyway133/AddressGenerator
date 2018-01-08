@@ -24,6 +24,11 @@ It's important that only you own and store these keys securely 💪
 
 Generating wallets with Javascript browsers or `electron.js` apps is a big red flag ‼️  Those are built on top of hundreds of libraries. Even if you're offline, who know if any of those dependencies are doing evil 😱
 
+While you're still skeptical, here are some readings
+
+- [I’m harvesting credit card numbers and passwords from your site. Here’s how.](https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5)
+- [Hunting Malicious npm Packages](https://duo.com/blog/hunting-malicious-npm-packages)
+
 You deserve a safer solution ♥️
 
 ### Features
