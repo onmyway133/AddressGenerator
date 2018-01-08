@@ -58,7 +58,7 @@ You deserve a safer solution ♥️
 | Ethereum        | https://etherscan.io/balancecheck-tool |
 | Ripple          | https://bithomp.com/explorer/ |
 | Litecoin        | http://explorer.litecoin.net/ |
-| ...             | ... |
+| Dash            | https://chainz.cryptoid.info/ |
 | ...             | ... |
 
 

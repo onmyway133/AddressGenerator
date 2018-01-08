@@ -13,7 +13,8 @@ struct CoinList {
     Bitcoin(name: "Bitcoin", publicKeyPrefix: 0x00, privateKeyPrefix: 0x80, "5", "[LK]"),
     Ethereum(name: "Ethereum"),
     Ripple(),
-    Bitcoin(name: "Litecoin", publicKeyPrefix: 0x30, privateKeyPrefix: 0xb0, "6", "T")
+    Bitcoin(name: "Litecoin", publicKeyPrefix: 0x30, privateKeyPrefix: 0xb0, "6", "T"),
+    Bitcoin(name: "Dash", publicKeyPrefix: 0x4c, privateKeyPrefix: 0xcc, "7", "X")
   ]
 
   static let coins: [CoinAware] = [
@@ -54,7 +55,6 @@ struct CoinList {
     Bitcoin(name: "Cryptonite", publicKeyPrefix: 0x1c, privateKeyPrefix: 0x80, "5", "[LK]"),
     Bitcoin(name: "CryptoWisdomCoin", publicKeyPrefix: 0x49, privateKeyPrefix: 0x87, "5", "[LM]"),
     Bitcoin(name: "C2coin", publicKeyPrefix: 0x1c, privateKeyPrefix: 0x9c, "6", "Q"),
-    Bitcoin(name: "Dash", publicKeyPrefix: 0x4c, privateKeyPrefix: 0xcc, "7", "X"),
     Bitcoin(name: "DeafDollars", publicKeyPrefix: 0x30, privateKeyPrefix: 0xb0, "6", "T"),
     Bitcoin(name: "DeepOnion", publicKeyPrefix: 0x1f, privateKeyPrefix: 0x9f, "6", "Q"),
     Bitcoin(name: "Deutsche eMark", publicKeyPrefix: 0x35, privateKeyPrefix: 0xb5, "7", "T"),
