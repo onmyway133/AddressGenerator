@@ -34,6 +34,7 @@ final class AccountController: BaseController {
   var coin: CoinAware! {
     didSet {
       coinNameLabel.stringValue = coin.name
+      clear()
     }
   }
 
@@ -106,6 +107,14 @@ final class AccountController: BaseController {
         }
       } catch {}
     }
+  }
+
+  private func clear() {
+    addressValueLabel.stringValue = ""
+    publicKeyValueLabel.stringValue = ""
+    privateKeyValueLabel.stringValue = ""
+    wifValueLabel.stringValue = ""
+    addressImageView.image = nil
   }
 
   private func update(account: Account) {
