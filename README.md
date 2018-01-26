@@ -65,6 +65,9 @@ You deserve a safer solution ♥️
 | Litecoin        | http://explorer.litecoin.net/ |
 | Dash            | https://chainz.cryptoid.info/ |
 | ...             | ... |
+| Raiblocks       | TODO |
+| Stellar         | TODO |
+| EOS             | TODO |
 
 
 ## How does it work
