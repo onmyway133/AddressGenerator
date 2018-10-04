@@ -81,7 +81,7 @@ You deserve a safer solution ♥️
 
 If you find this project helpful, please consider donating 😝
 
-- Bitcoin: 3Fm1UYLNE7VxMeteKYSwEKaqpG3WyuESKN
+- Bitcoin: 186hfQqr6ZkNfhs8b7oR927n3Fr9qnCQwU
 - Ethereum: 0x7f2eA797329271e1b6f1E518A34f319A884A5A19
 
 ## Licence
