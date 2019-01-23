@@ -7,22 +7,22 @@ Address Generator
 
 ### Your own key pair
 
-You can go to some websites, create an account and have them manage your online wallets there. It also means that you can lost your money when they are hacked or compromised. Also, some websites make it not easy to export the private keys.
+You can go to some websites, create an account and have them manage your online wallets there. It also means that you can lose your money when they are hacked or compromised. Also, some websites make it very difficult to export the private keys.
 
 Would you give your money safe key to strangers? The same applies for cryptocurrencies, the money is truly yours when only you have the keys. You can generate your own key pair, thanks to `AddressGenerator`
 
 ### Asymetric cryptography
 
-A cryptocurrency account, which is based on [Asymetric cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography), consists of 2 keys: public key and private key.
+A cryptocurrency account, which is based on [Asymmetric cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography), consists of 2 keys: public key and private key.
 
-- The private key (raw or in [wallet import format](https://en.bitcoin.it/wiki/Wallet_import_format)) is a secret number generated randomly. You spend money by using private key to sign transaction
+- The private key (raw or in [wallet import format](https://en.bitcoin.it/wiki/Wallet_import_format)) is a secret number generated randomly. You spend money by using private key to sign transaction.
 - The public key is derived from private key. Your account address is a hash value of this public key.
 
 It's important that only you own and store these keys securely 💪
 
 ### Extra dependencies
 
-Generating wallets with Javascript browsers or `electron.js` apps is a big red flag ‼️  Those are built on top of hundreds of libraries. Even if you're offline, who know if any of those dependencies are doing evil 😱
+Generating wallets with Javascript browsers or `electron.js` apps is a big red flag ‼️  Those are built on top of hundreds of libraries. Even if you're offline, who knows if any of those dependencies are doing evil 😱
 
 While you're still skeptical, here are some readings
 
@@ -44,7 +44,7 @@ You deserve a safer solution ♥️
 
 ## How to use
 
-- Download latest release from https://github.com/onmyway133/AddressGenerator/releases
+- Download the latest [release](https://github.com/onmyway133/AddressGenerator/releases)
 
 <div align="center">
 <img src="Screenshots/demo.png" height="500" />
@@ -65,22 +65,25 @@ You deserve a safer solution ♥️
 | Litecoin        | http://explorer.litecoin.net/ |
 | Dash            | https://chainz.cryptoid.info/ |
 | ...             | ... |
+| Raiblocks       | TODO |
+| Stellar         | TODO |
+| EOS             | TODO |
 
 
 ## How does it work
 
 - Bitcoin and similar coins addresses are based on [Technical background of version 1 Bitcoin addresses](https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses), in form of [Pay 2 Public Key Hash](https://en.bitcoin.it/wiki/Transaction#Pay-to-PubkeyHash)
 - Ripple address is based on [XRP Ledger Accounts](https://ripple.com/build/accounts/)
-- Ethereum address and [keccak 256](https://en.wikipedia.org/wiki/SHA-3) are based on official [ethash](https://github.com/ethereum/ethash) 
-- Intial key prefixes are from [WalletGenerator](https://github.com/MichaelMure/WalletGenerator.net)
+- Ethereum address and [keccak 256](https://en.wikipedia.org/wiki/SHA-3) are based on official [ethash](https://github.com/ethereum/ethash)
+- Initial key prefixes are from [WalletGenerator](https://github.com/MichaelMure/WalletGenerator.net)
 
 ## Donations
 
 If you find this project helpful, please consider donating 😝
 
-- Bitcoin: 3Fm1UYLNE7VxMeteKYSwEKaqpG3WyuESKN
+- Bitcoin: 186hfQqr6ZkNfhs8b7oR927n3Fr9qnCQwU
 - Ethereum: 0x7f2eA797329271e1b6f1E518A34f319A884A5A19
 
 ## Licence
 
-This project is released under the MIT license. See LICENSE.md.
+This project is released under the MIT license. See [LICENSE.md](https://github.com/onmyway133/AddressGenerator/blob/master/LICENSE.md)
