@@ -91,8 +91,8 @@ final class CoinsController: BaseController, NSCollectionViewDataSource, NSColle
 
     cell.label.stringValue = coin.name
     cell.coinImageView.image =
-      NSImage(named: NSImage.Name(rawValue: coin.name))
-      ?? NSImage(named: NSImage.Name(rawValue: "Others"))
+      NSImage(named: NSImage.Name(coin.name))
+      ?? NSImage(named: NSImage.Name("Others"))
 
     return cell
   }

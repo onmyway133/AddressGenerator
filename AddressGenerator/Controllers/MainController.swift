@@ -24,10 +24,10 @@ final class MainController: BaseController {
   }
 
   func setup() {
-    addChildViewController(coinsController)
+    addChild(coinsController)
     view.addSubview(coinsController.view)
 
-    addChildViewController(accountController)
+    addChild(accountController)
     view.addSubview(accountController.view)
 
     activate(
