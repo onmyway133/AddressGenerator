@@ -42,6 +42,7 @@ final class AccountController: BaseController {
     super.viewDidLoad()
 
     setup()
+    aboutButton.isHidden = true
   }
 
   private func setup() {
